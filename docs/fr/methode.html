@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment lire et comment se fait Terra Aperta · Terra Aperta</title>
+<meta name="description" content="Données ouvertes sur la nature en Espagne et en France : la migration de cette nuit, ce qui brûle, ce qui change dans les sites protégés, ce qui s&#x27;autorise et l&#x27;eau.">
+<link rel="alternate" hreflang="es" href="../metodo.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cstyle%3E.b%7Bfill%3A%23221d1a%7D.p%7Bfill%3A%23a8432a%7D.l%7Bstroke%3A%23221d1a%7D%40media%20%28prefers-color-scheme%3Adark%29%7B.b%7Bfill%3A%23ede6e0%7D.p%7Bfill%3A%23f08d6e%7D.l%7Bstroke%3A%23ede6e0%7D%7D%3C/style%3E%3Cg%20class%3D%22b%22%3E%3Ccircle%20cx%3D%2234%22%20cy%3D%2231%22%20r%3D%2219%22/%3E%3Cpath%20d%3D%22M19%2040%207%2050.5l3.5%204L25%2046z%22/%3E%3Cpath%20d%3D%22M52%2022l8%202.5-8%202.5z%22/%3E%3C/g%3E%3Cpath%20class%3D%22p%22%20d%3D%22M34%2012a19%2019%200%200%201%2015%2030.8C42%2041%2037%2034%2037%2026c0-6%201.5-10.5%204-12.6A19%2019%200%200%200%2034%2012z%22/%3E%3Cg%20fill%3D%22%23221d1a%22%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2221.5%22%20r%3D%222.1%22/%3E%3C/g%3E%3Cpath%20class%3D%22l%22%20d%3D%22M31%2049.5V60m7-11v11m-10.5.2h6m1.5%200h6%22%20fill%3D%22none%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* common.css v1.1 — shared look of the nine open-data projects (vigia-incendios is the reference).
+   Copy this file verbatim into each repo; change it in all repos at once, never in one.
+   Each repo sets only --accent and --accent-dark below it and adds its own rules after it.
+
+   Type:  Barlow Condensed for titles and labels, Source Serif 4 for reading, IBM Plex Mono for
+          figures, codes and dates. Load them with:
+   https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap */
+
+:root{
+  --ground:#f0edea; --paper:#faf8f6; --ink:#221d1a; --muted:#6b625c; --line:#dad2cb;
+  --accent:#c2410c; --accent-dark:#fb7b3e;
+  --natura:#2f7a55; --natura-dark:#62b88a;
+  --shadow:0 1px 0 rgba(34,29,26,.06), 0 6px 18px -10px rgba(34,29,26,.28);
+  --font-title:"Barlow Condensed","Arial Narrow",sans-serif;
+  --font-text:"Source Serif 4",Georgia,serif;
+  --font-data:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#15110f; --paper:#1d1815; --ink:#ede6e0; --muted:#a69a91; --line:#362d28;
+    --accent:var(--accent-dark); --natura:var(--natura-dark);
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#15110f; --paper:#1d1815; --ink:#ede6e0; --muted:#a69a91; --line:#362d28;
+  --accent:var(--accent-dark); --natura:var(--natura-dark);
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.55 var(--font-text);overflow-wrap:break-word}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+img,svg{max-width:100%}
+
+/* Header: «PROJECT NAME» with the key word in the accent colour, one sentence, then the figures. */
+.site-header{max-width:1440px;margin:0 auto;padding:28px 16px 18px;display:grid;gap:14px}
+.site-header h1{margin:0;font:700 clamp(40px,6vw,64px)/.9 var(--font-title);text-transform:uppercase;letter-spacing:.02em}
+.site-header h1 span{color:var(--accent)}
+/* Logo: the robin from logo.py before the title; same shape everywhere, breast in the accent. */
+.logo{display:inline-block;width:1.05em;height:1.05em;margin-right:.16em;vertical-align:-.13em;color:var(--ink);overflow:visible}
+.logo .logo-breast{fill:var(--accent)}
+.site-header .lede{margin:0;max-width:72ch;font-size:18px}
+.figures{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0;padding:12px 0 0;border-top:1px solid var(--line)}
+.figures div{display:grid;gap:2px}
+.figures b{font:600 30px/1 var(--font-data);font-variant-numeric:tabular-nums;color:var(--accent)}
+.figures span{font:600 13px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* Text roles */
+.label{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.data{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+.note{color:var(--muted);font-size:14.5px}
+.badge{display:inline-block;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor;color:var(--accent)}
+
+/* Cards and panels */
+.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:16px}
+
+/* Method section: how every figure is computed, step by step */
+.method{max-width:1440px;margin:0 auto;padding:24px 16px}
+.method h2{margin:0 0 6px;font:700 28px/1 var(--font-title);text-transform:uppercase;letter-spacing:.03em}
+.method h3{margin:18px 0 4px;font:600 18px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.06em}
+.method p,.method li{max-width:72ch}
+table.params{border-collapse:collapse;font-size:14.5px;width:100%;max-width:900px}
+table.params th,table.params td{text-align:left;vertical-align:top;padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
+table.params th{font:600 14px/1.3 var(--font-title);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;padding-right:16px}
+table.params td.num,table.params th.num{text-align:right;font-family:var(--font-data);font-variant-numeric:tabular-nums}
+
+/* Footer: sources, licence, the shared principle and the sibling projects */
+.site-footer{max-width:1440px;margin:0 auto;padding:16px 16px 40px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);display:grid;gap:10px}
+.site-footer .principle{margin:0;color:var(--ink);font-style:italic}
+.siblings{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0;padding:0;list-style:none}
+.siblings li a{text-decoration-color:var(--line)}
+.siblings li[aria-current] a{color:var(--ink);text-decoration-color:var(--accent);font-weight:600}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .figures b{font-size:24px}
+}
+
+:root{--accent:#a8432a;--accent-dark:#f08d6e}
+
+.tn{position:sticky;top:0;z-index:30;background:#221d1a;color:#efe7df;border-bottom:1px solid #41362f;
+  font:600 15px/1 var(--font-title);text-transform:uppercase;letter-spacing:.06em}
+.tn .in{max-width:1180px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:0 12px}
+.tn a{color:inherit;text-decoration:none}
+.tn .brand{display:flex;align-items:center;gap:6px;padding:10px 0;white-space:nowrap;font-weight:700}
+.tn .brand span{color:#f08d6e}
+.tn .logo{width:20px;height:20px;margin:0;color:#efe7df}
+.tn .logo .logo-breast{fill:#f08d6e}
+.tn ul{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;flex:1}
+.tn li{position:relative}
+.tn .top,.tn summary{display:block;padding:13px 10px 11px;white-space:nowrap;border-bottom:3px solid transparent;color:#cbbfb5;cursor:pointer;list-style:none}
+.tn summary::-webkit-details-marker{display:none}
+.tn summary::after{content:"";display:inline-block;margin-left:6px;border:4px solid transparent;border-top-color:currentColor;border-bottom:0;vertical-align:2px}
+.tn .top:hover,.tn summary:hover,.tn details[open] summary{color:#fff}
+.tn details[open] summary,.tn .top[aria-current=page]{color:#fff;border-bottom-color:#f08d6e}
+.tn .dd{position:absolute;left:0;top:100%;min-width:260px;background:#2c2521;border:1px solid #41362f;
+  box-shadow:0 12px 28px rgba(0,0,0,.35);padding:6px 0;display:grid;text-transform:none;letter-spacing:0;font:500 16px/1.25 var(--font-text)}
+.tn li:nth-last-child(-n+3) .dd{left:auto;right:0}
+.tn .dd a{padding:8px 14px;color:#efe7df}
+.tn .dd a:hover,.tn .dd a:focus-visible{background:#41362f}
+.tn .dd-h{margin:10px 14px 2px;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;color:#a2958b}
+.tn .dd-h:first-child{margin-top:6px}
+.tn .lang{padding:6px 9px 5px;border:1.5px solid #41362f;font-size:13px;white-space:nowrap;color:#cbbfb5}
+.tn .lang:hover{border-color:#f08d6e;color:#fff}
+.tn a:focus-visible,.tn summary:focus-visible{outline:2px solid #f08d6e;outline-offset:-2px}
+.lg{display:inline-block;font:600 10.5px/1 var(--font-title);letter-spacing:.06em;padding:2px 4px 1px;border:1px solid currentColor;margin-left:6px;opacity:.7;vertical-align:1px}
+@media (max-width:820px){
+  .tn{position:relative}.tn .in{flex-wrap:wrap}.tn .brand{order:1}.tn .lang{order:2;margin-left:auto}
+  .tn ul{order:3;flex-basis:100%;margin:0 -10px}
+  .tn li{position:static}.tn .dd,.tn li:nth-last-child(-n+3) .dd{left:8px;right:8px;min-width:0}
+}
+.site-header{padding-bottom:6px}
+.site-header .latin{margin:0;color:var(--muted);font-size:15px}
+main{max-width:1180px;margin:0 auto;padding:0 16px 8px}
+main h2{margin:30px 0 10px;font:700 26px/1 var(--font-title);text-transform:uppercase;letter-spacing:.03em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:14px;margin-top:14px}
+.card{display:grid;gap:10px;align-content:start;border-top:4px solid var(--p);padding:14px 16px 16px}
+.card h3{margin:0;font:700 23px/1.05 var(--font-title);text-transform:uppercase;letter-spacing:.02em}
+.card h3 a{text-decoration:none}
+.card h3 a:hover{text-decoration:underline;text-decoration-color:var(--p)}
+.card .q{margin:0}
+.card.lead{margin-top:18px;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px 28px;padding:20px 22px}
+.card.lead h3{font-size:34px}
+.card.lead .q{font-size:19px}
+.card.lead .figs{grid-row:1/span 4;grid-column:2;border-top:0;padding:0;align-content:center}
+.card.lead .figs b{font-size:46px}
+.card.lead .go{display:flex;flex-wrap:wrap;gap:8px}
+.card.lead .go a{font:600 14px/1 var(--font-title);text-transform:uppercase;letter-spacing:.07em;padding:8px 11px 7px;border:1.5px solid var(--p);text-decoration:none}
+.card.lead .go a:hover{background:var(--p);color:#fff}
+@media (max-width:700px){.card.lead{grid-template-columns:1fr}.card.lead .figs{grid-row:auto;grid-column:auto}}
+.figs{margin:0;padding:10px 0 0;border-top:1px solid var(--line);display:grid;gap:8px}
+.figs div{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:baseline}
+.figs b{font:600 22px/1 var(--font-data);font-variant-numeric:tabular-nums;color:var(--accent)}
+.figs span{font-size:14.5px}
+.figs small{grid-column:2;font:600 11.5px/1 var(--font-title);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.when{color:var(--muted);font-size:13.5px;margin:0}
+.warn{color:var(--ink);font-weight:600}
+.warn::before{content:"⚠ ";color:var(--accent)}
+.st{display:inline-block;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor;vertical-align:4px;margin-left:8px}
+.st-mantenimiento{color:var(--muted)}
+.st-aparcado{color:var(--accent)}
+.cta{margin:30px 0 0;font-size:16px}
+.prose{max-width:900px}
+.prose ul,.prose ol{padding-left:22px;display:grid;gap:6px}
+dl.gloss{display:grid;grid-template-columns:minmax(140px,max-content) 1fr;gap:8px 18px;max-width:900px}
+dl.gloss dt{font:600 15px/1.35 var(--font-title);text-transform:uppercase;letter-spacing:.05em}
+dl.gloss dd{margin:0}
+@media (max-width:640px){dl.gloss{grid-template-columns:1fr}dl.gloss dd{margin-bottom:6px}}
+
+</style>
+</head>
+<body>
+<nav class="tn" aria-label="Projets"><div class="in"><a class="brand" href="./"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="34" cy="31" r="19"/><path d="M19 40 7 50.5l3.5 4L25 46z"/><path d="M52 22l8 2.5-8 2.5z"/></g><path class="logo-breast" d="M34 12a19 19 0 0 1 15 30.8C42 41 37 34 37 26c0-6 1.5-10.5 4-12.6A19 19 0 0 0 34 12z"/><g fill="#221d1a"><circle cx="45" cy="21.5" r="2.1"/></g><path d="M31 49.5V60m7-11v11m-10.5.2h6m1.5 0h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Terra <span>Aperta</span></a><ul><li><details><summary>Sub Nocte</summary><div class="dd"><a href="https://asensio94.github.io/sub-nocte/" hreflang="es">Cette nuit<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/sub-nocte/rutas.html" hreflang="es">Routes<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/sub-nocte/parques.html" hreflang="es">Parcs éoliens<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/sub-nocte/metodo.html" hreflang="es">Méthode<small class="lg" lang="es">ES</small></a></div></details></li><li><details><summary>Incendies</summary><div class="dd"><a href="https://asensio94.github.io/vigia-incendios/" hreflang="es">Espagne : carte en direct<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/vigia-incendios/incendio/" hreflang="es">Espagne : grands incendies<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/vigia-incendios/fr/" hreflang="fr">France : carte en direct</a><a href="https://asensio94.github.io/vigia-incendios/fr/incendio/" hreflang="fr">France : grands incendies</a></div></details></li><li><details><summary>Centinela</summary><div class="dd"><a href="https://asensio94.github.io/centinela-natura/" hreflang="es">Espagne (Cantabrie)<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/centinela-natura/fr/" hreflang="fr">France (Pyrénées-Atlantiques)</a></div></details></li><li><details><summary>IBA</summary><div class="dd"><a href="https://asensio94.github.io/estado-iba/" hreflang="es">Espagne<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/estado-iba/fr/" hreflang="fr">France</a></div></details></li><li><details><summary>Lignes</summary><div class="dd"><a href="https://asensio94.github.io/riesgo-tendidos-aves/regions.fr.html" hreflang="fr">Carte</a><a href="https://asensio94.github.io/riesgo-tendidos-aves/index.fr.html" hreflang="fr">Le projet</a></div></details></li><li><details><summary>Consultations</summary><div class="dd"><p class="dd-h">Observatoire des consultations</p><a href="https://asensio94.github.io/observatorio-alegaciones/index.html" hreflang="es">Consultations ouvertes<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/observatorio-alegaciones/condicionado.html" hreflang="es">Après l&#x27;autorisation<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/observatorio-alegaciones/seguimiento.html" hreflang="es">Suivi<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/observatorio-alegaciones/litoral.html" hreflang="es">Littoral<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/observatorio-alegaciones/historico.html" hreflang="es">Historique<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/grafo-promotores/" hreflang="es">Graphe des porteurs de projet<small class="lg" lang="es">ES</small></a></div></details></li><li><details><summary>Eau</summary><div class="dd"><p class="dd-h">Veille des zones humides</p><a href="https://asensio94.github.io/vigilancia-humedales/" hreflang="es">Espagne<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/vigilancia-humedales/france.html" hreflang="fr">France</a><a href="https://asensio94.github.io/caudal-ecologico/" hreflang="es">Débit écologique<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/acuiferos-francia/" hreflang="es">Nappes de France<small class="lg" lang="es">ES</small></a><p class="dd-h">Épuration et baignade</p><a href="https://asensio94.github.io/depuracion-y-bano/" hreflang="es">Espagne<small class="lg" lang="es">ES</small></a><a href="https://asensio94.github.io/depuracion-y-bano/fr/" hreflang="fr">France</a><a href="https://asensio94.github.io/zona-inundable/" hreflang="es">Construire en zone inondable<small class="lg" lang="es">ES</small></a></div></details></li><li><a class="top" href="methode.html" aria-current="page">Méthode</a></li></ul><a class="lang" href="../metodo.html" hreflang="es" lang="es">Español</a></div></nav>
+<header class="site-header">
+  <h1>Comment lire et comment se fait Terra Aperta</h1>
+</header>
+<main class="prose">
+<section><h2>Comment lire cette page</h2><ol><li>Le <b>menu</b> du haut mène à chaque site et à chacune de ses pages. Si une page est dans une autre langue, il l'indique par <small class="lg">ES</small> ou <small class="lg">FR</small>.</li><li>Chaque fiche est un projet indépendant : la <b>question</b> à laquelle il répond, son <b>chiffre du jour</b> et la phrase qui dit exactement ce qu'il compte. Un robot le lit chaque matin dans le fichier de signaux que publie le projet (<a href="#glossaire">glossaire</a>). On n'additionne pas les chiffres d'un projet à l'autre : chacun compte autre chose.</li><li>La <b>date</b> est celle de sa dernière mise à jour. S'il reste plus longtemps que d'habitude sans mise à jour, la fiche le signale au lieu de le cacher.</li><li>Tous se mettent à jour seuls. Ceux marqués <span class="st st-mantenimiento">maintenance</span> sont corrigés, mais n'évoluent pas pour l'instant.</li></ol></section>
+<section><h2>Ce que fait chaque projet</h2><dl class="gloss"><dt><a href="https://asensio94.github.io/sub-nocte/">Sub Nocte</a></dt><dd>Prévision à partir des profils ouverts des radars météorologiques européens (Aloft) et de la météo.</dd><dt><a href="https://asensio94.github.io/vigia-incendios/fr/">Vigie des incendies</a></dt><dd>Regroupe en incendies, plusieurs fois par jour, les foyers de chaleur des satellites VIIRS (NASA FIRMS) et les croise avec Natura 2000. Mesure ensuite la surface brûlée avec Sentinel-2.</dd><dt><a href="https://asensio94.github.io/centinela-natura/fr/">Centinela Natura</a></dt><dd>Compare des images Sentinel-2 tous les quelques jours avec des règles spectrales fixes et indique la parcelle cadastrale concernée. Pilotes : Cantabrie et Pyrénées-Atlantiques.</dd><dt><a href="https://asensio94.github.io/estado-iba/fr/">État des IBA</a></dt><dd>Réunit dans une fiche par site et par commune ce que publient les autres projets : projets, feu, sol, eau, rivières et lignes. Sans indice.</dd><dt><a href="https://asensio94.github.io/riesgo-tendidos-aves/regions.fr.html">Risque des lignes pour les oiseaux</a></dt><dd>Croise les lignes d&#x27;OpenStreetMap et des gestionnaires de réseau avec la présence des oiseaux (eBird, GBIF, Movebank) et le relief, et classe les éléments par risque de collision et d&#x27;électrocution. Mis à jour chaque mois.</dd><dt><a href="https://asensio94.github.io/observatorio-alegaciones/index.html">Observatoire des consultations</a></dt><dd>Lit chaque matin le Journal officiel espagnol (BOE), croise chaque projet avec Natura 2000 et les espèces menacées, et garde la décision finale avec ses prescriptions, pour pouvoir réagir à temps.</dd><dt><a href="https://asensio94.github.io/grafo-promotores/">Graphe des porteurs de projet</a></dt><dd>Relie chaque porteur de projet de l&#x27;observatoire à son groupe à partir des registres publics des sociétés. Les personnes physiques n&#x27;y figurent pas.</dd><dt><a href="https://asensio94.github.io/vigilancia-humedales/france.html">Veille des zones humides</a></dt><dd>Surface en eau, turbidité et chlorophylle avec Sentinel-2 tous les quelques jours, face à la série de chaque zone humide depuis 2017. Douze sites : six en Espagne et six en France.</dd><dt><a href="https://asensio94.github.io/caudal-ecologico/">Débit écologique</a></dt><dd>Débit journalier des stations hydrométriques face au débit écologique de chaque tronçon. Les données sont provisoires : on écrit « sous le minimum », jamais « en infraction ».</dd><dt><a href="https://asensio94.github.io/acuiferos-francia/">Nappes de France</a></dt><dd>Niveaux piézométriques de Hub&#x27;Eau face aux arrêtés sécheresse de VigiEau.</dd><dt><a href="https://asensio94.github.io/depuracion-y-bano/fr/">Épuration et baignade</a></dt><dd>Rapports de chaque pays à l&#x27;Agence européenne pour l&#x27;environnement sur la directive eaux résiduaires urbaines (91/271), avec le classement officiel des baignades.</dd><dt><a href="https://asensio94.github.io/zona-inundable/">Construire en zone inondable</a></dt><dd>Les bâtiments du cadastre espagnol par année de construction dans les zones inondables officielles (SNCZI), avant et après la réforme de 2016. Pilote : Communauté valencienne. L&#x27;année peut être celle d&#x27;une rénovation.</dd></dl></section>
+<section><h2>Ce que c&#x27;est, et ce que ce n&#x27;est pas</h2><ul><li><b>C'est</b> un ensemble d'outils citoyens faits par un particulier avec des données déjà publiques : journaux officiels, satellites européens et de la NASA, registres et agences environnementales.</li><li><b>Ce n'est pas</b> une source officielle ni une ONG, et cela ne remplace aucune administration. Ce qui est montré, ce sont des <b>indices, pas des verdicts</b> : un satellite peut confondre une ombre avec de l'eau ou un brûlage agricole avec un incendie. Chaque projet dit sur son site comment il a été vérifié et où il se trompe.</li><li><b>Aucune intelligence artificielle</b> ne décide de quoi que ce soit. Ce sont des règles fixes, écrites et publiées, que chacun peut relire.</li><li><b>Aucun nom de personne</b> (propriétaires, dirigeants, particuliers) ni la localisation d'espèces sensibles n'est publié. Seulement des entreprises, des administrations et des données agrégées.</li><li>Le code est libre (licence MIT) et les données propres sont réutilisables en citant la source (CC BY 4.0).</li></ul></section>
+<section><h2>Comment cette page est faite</h2><ol><li>Les textes de chaque fiche (question, méthode, pays) sont écrits à la main dans <code>terra/projects.py</code>.</li><li>Chaque jour, un robot GitHub Actions lit pour chaque projet son fichier de signaux (<code>signals.json</code>), la ligne d'état de son README et s'il a une page en français.</li><li>À partir de ces signaux, il calcule le chiffre de chaque fiche, toujours avec une règle écrite dans le même fichier : par exemple, pour la vigie des incendies, combien des incendies publiés touchent un site Natura 2000.</li><li>Si un projet ne publie pas de signaux, seule la date de la dernière activité de son dépôt est affichée.</li><li>Si un projet reste plus de jours que d'habitude sans mise à jour (3 pour les quotidiens, 40 pour les mensuels), la fiche l'indique. Si une source est en panne, aussi.</li><li>Ce qui a été lu est gardé tel quel dans <a href="../estado.json">estado.json</a>, pour que chacun puisse vérifier les chiffres.</li></ol></section>
+<section><h2 id="glossaire">Glossaire</h2>
+<dl class="gloss"><dt>Natura 2000</dt><dd>Le réseau européen de sites protégés : ZPS (pour les oiseaux) et ZSC (pour les habitats et les autres espèces). En Espagne, ZEPA et ZEC.</dd><dt>IBA</dt><dd>Zones importantes pour la conservation des oiseaux (<i lang="en">Important Bird and Biodiversity Areas</i>), inventoriées par BirdLife International ; en France par la LPO, en Espagne par SEO/BirdLife.</dd><dt>Signaux (<code>signals.json</code>)</dt><dd>Le fichier commun où chaque projet publie ce qu'il a trouvé (un incendie, un changement d'usage du sol, une rivière sous le minimum), avec date, lieu et lien. Les projets se lisent ainsi entre eux. Les règles sont dans le contrat d'<a href="https://github.com/Asensio94/estado-iba/blob/main/CONTRATO.md">estado-iba</a> (en espagnol).</dd><dt>Sentinel-2</dt><dd>Satellites européens du programme Copernicus qui photographient chaque point tous les quelques jours, avec des pixels de 10 à 20 m.</dd><dt>VIIRS / FIRMS</dt><dd>Capteur satellite qui détecte les points chauds, et le service de la NASA qui les publie quelques heures après chaque passage.</dd><dt>BOE</dt><dd>Le Journal officiel espagnol (<i lang="es">Boletín Oficial del Estado</i>), où sont publiés les projets soumis à évaluation environnementale et leurs décisions.</dd><dt>INE / INSEE</dt><dd>Les instituts de statistique espagnol et français. Leurs codes identifient chaque municipio ou commune.</dd></dl></section>
+</main>
+<footer class="site-footer">
+  <p class="principle">Données publiques, règles en clair et chaque chiffre relié à sa source. Des indices, pas des verdicts.</p>
+  <p>Fait avec des données publiques par un particulier. Code et méthode sur <a href="https://github.com/Asensio94/naturaleza">GitHub</a> ; pour signaler une erreur, ouvrez-y un ticket.</p>
+</footer>
+<script>
+(function(){var all=function(){return document.querySelectorAll('.tn details[open]')};
+document.addEventListener('click',function(e){all().forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')all().forEach(function(d){d.removeAttribute('open');d.querySelector('summary').focus()})});
+})();</script>
+</body>
+</html>
