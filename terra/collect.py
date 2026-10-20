@@ -21,7 +21,7 @@ from typing import Callable
 from .projects import FR_PATHS, PROJECTS, Project
 
 log = logging.getLogger(__name__)
-UA = "terra-aperta (https://github.com/Asensio94/naturaleza)"
+UA = "terra-aperta (https://github.com/Asensio94/terra-aperta)"
 STATUS_RE = re.compile(r"\*\*Estado: (activo|mantenimiento|aparcado)([^*]*)\*\*")
 
 Fetch = Callable[[str], "tuple[int, str]"]

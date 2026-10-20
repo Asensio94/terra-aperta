@@ -15,7 +15,7 @@ from .projects import MENU, PROJECTS, Page, Project
 
 COMMON_CSS = (Path(__file__).with_name("common.css")).read_text(encoding="utf-8")
 ACCENT, ACCENT_DARK = "#a8432a", "#f08d6e"
-REPO = "https://github.com/Asensio94/naturaleza"
+REPO = "https://github.com/Asensio94/terra-aperta"
 FONTS = ("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700"
          "&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap")
 

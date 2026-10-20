@@ -2,8 +2,8 @@
 
 La página de entrada a los proyectos hermanos de datos abiertos sobre naturaleza en España y Francia: qué
 pregunta responde cada uno, cómo lo hace, su cifra del día y dónde está su web. No mide nada por sí misma:
-cada día lee lo que ya publica cada proyecto. Web: <https://asensio94.github.io/naturaleza/> · en francés:
-<https://asensio94.github.io/naturaleza/fr/>
+cada día lee lo que ya publica cada proyecto. Web: <https://asensio94.github.io/terra-aperta/> · en francés:
+<https://asensio94.github.io/terra-aperta/fr/>
 
 *Terra Aperta* en latín significa «tierra abierta», a la vista de todos.
 
