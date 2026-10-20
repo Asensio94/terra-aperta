@@ -6,6 +6,7 @@ answers, what its figure counts, where the data come from and what none of this 
 from __future__ import annotations
 
 from datetime import datetime
+import re
 from html import escape
 from pathlib import Path
 
@@ -374,7 +375,19 @@ def card(p: Project, st: dict, lang: str, lead: bool = False) -> str:
     )
 
 
+# Every link that leaves the site opens in a new tab, so Terra Aperta stays open behind it.
+_EXTERNAL = re.compile(r'<a (?![^>]*\btarget=)([^>]*\bhref="https?://)')
+
+
+def _new_tab(html: str) -> str:
+    return _EXTERNAL.sub(r'<a target="_blank" rel="noopener" \1', html)
+
+
 def _page(lang: str, here: str, title: str, body: str) -> str:
+    return _new_tab(_page_html(lang, here, title, body))
+
+
+def _page_html(lang: str, here: str, title: str, body: str) -> str:
     L = T[lang]
     other = "fr" if lang == "es" else "es"
     alt = ("fr/" if lang == "es" else "../") + ("" if here == "home" else T[other]["method_page"])

@@ -32,7 +32,8 @@ cada día lee lo que ya publica cada proyecto. Web: <https://asensio94.github.io
 5. **Páginas.** `terra/web.py` escribe la portada, corta: la barra, Sub Nocte en grande y una ficha por
    proyecto con su pregunta, su cifra y su fecha (`docs/index.html`, `docs/fr/index.html`). Todo lo que la
    explica —cómo leerla, qué hace cada proyecto, qué no es, cómo se hace y el glosario— va en la página de
-   método (`docs/metodo.html`, `docs/fr/methode.html`). Además, `docs/estado.json` guarda todo lo leído. Si no se puede leer más de la mitad de los proyectos,
+   método (`docs/metodo.html`, `docs/fr/methode.html`). Los enlaces que salen hacia otra web se abren en una
+   pestaña nueva, para que Terra Aperta siga abierta detrás; los internos, no. Además, `docs/estado.json` guarda todo lo leído. Si no se puede leer más de la mitad de los proyectos,
    el fallo es de la red y no de ellos: se deja la página que ya estaba.
 
 ## Límites

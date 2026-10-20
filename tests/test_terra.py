@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import tempfile
 import unittest
 from datetime import datetime, timezone
@@ -136,6 +137,19 @@ class Bar(unittest.TestCase):
         self.assertIn('<small class="lg" lang="es">ES</small>', fr)
         self.assertIn('href="fr/"', es)
         self.assertIn('href="../metodo.html"', nav("fr", "method"))
+
+    def test_external_links_open_in_a_new_tab_and_internal_ones_do_not(self):
+        state = collect(get=fake_get({}), now=NOW)
+        for lang in ("es", "fr"):
+            html = render(state, lang)
+            anchors = re.findall(r"<a [^>]*>", html)
+            external = [a for a in anchors if 'href="http' in a]
+            self.assertTrue(external)
+            for a in external:
+                self.assertIn('target="_blank" rel="noopener"', a)
+            for a in anchors:
+                if 'href="http' not in a:
+                    self.assertNotIn("target=", a)
 
 
 if __name__ == "__main__":
