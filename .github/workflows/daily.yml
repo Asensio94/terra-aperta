@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: "40 7 * * *"
   workflow_dispatch:
+  # A change to the code or the texts shows up as soon as it is merged, not the next morning.
+  push:
+    branches: [main]
+    paths: ["terra/**"]
 
 permissions:
   contents: write
