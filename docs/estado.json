@@ -1,0 +1,377 @@
+{
+ "generated": "2026-10-20T09:56Z",
+ "projects": [
+  {
+   "slug": "observatorio-alegaciones",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": null,
+   "signals": 329,
+   "figures": [
+    {
+     "country": "ES",
+     "value": 158,
+     "es": "anuncios del BOE con trámite ambiental desde el 27 de julio de 2026",
+     "fr": "avis du Journal officiel espagnol (BOE) avec procédure environnementale depuis le 27 juillet 2026"
+    },
+    {
+     "country": "ES",
+     "value": 171,
+     "es": "resoluciones finales leídas, con sus condiciones",
+     "fr": "décisions finales lues, avec leurs prescriptions"
+    }
+   ],
+   "updated": "2026-10-19T14:50:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [],
+   "countries": [
+    "ES"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "grafo-promotores",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": null,
+   "signals": null,
+   "figures": [],
+   "updated": "2026-10-19T14:58:04+00:00",
+   "updated_from": "repo",
+   "countries": [
+    "ES"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "cartera-cotizadas",
+   "errors": [],
+   "status": "mantenimiento",
+   "status_note": "",
+   "fr_url": null,
+   "signals": null,
+   "figures": [],
+   "updated": "2026-10-19T17:03:25+00:00",
+   "updated_from": "repo",
+   "countries": [
+    "ES"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "vigia-incendios",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": "https://asensio94.github.io/vigia-incendios/fr/",
+   "signals": 674,
+   "figures": [
+    {
+     "country": "ES",
+     "value": 76,
+     "es": "incendios que tocan la Red Natura 2000, de 513 con focos desde el 29 de septiembre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 513 avec foyers depuis le 29 septembre 2026"
+    },
+    {
+     "country": "FR",
+     "value": 23,
+     "es": "incendios que tocan la Red Natura 2000, de 161 con focos desde el 12 de octubre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 161 avec foyers depuis le 12 octobre 2026"
+    }
+   ],
+   "updated": "2026-10-20T09:31:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [
+    "ES",
+    "FR"
+   ],
+   "countries": [
+    "ES",
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "centinela-natura",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": "https://asensio94.github.io/centinela-natura/fr/",
+   "signals": 443,
+   "figures": [
+    {
+     "country": "ES",
+     "value": 72,
+     "es": "cambios confirmados dentro de espacios Natura 2000 desde el 30 de septiembre de 2025",
+     "fr": "changements confirmés à l'intérieur de sites Natura 2000 depuis le 30 septembre 2025"
+    },
+    {
+     "country": "FR",
+     "value": 98,
+     "es": "cambios confirmados dentro de espacios Natura 2000 desde el 30 de septiembre de 2025",
+     "fr": "changements confirmés à l'intérieur de sites Natura 2000 depuis le 30 septembre 2025"
+    }
+   ],
+   "updated": "2026-10-20T09:44:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [
+    "ES",
+    "FR"
+   ],
+   "countries": [
+    "ES",
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "barbechos-esteparias",
+   "errors": [],
+   "status": "aparcado",
+   "status_note": "octubre de 2026",
+   "fr_url": null,
+   "signals": null,
+   "figures": [],
+   "updated": "2026-10-16T08:30:06+00:00",
+   "updated_from": "repo",
+   "countries": [
+    "ES"
+   ],
+   "stale": true
+  },
+  {
+   "slug": "vigilancia-humedales",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": "https://asensio94.github.io/vigilancia-humedales/france.html",
+   "signals": 6,
+   "figures": [
+    {
+     "country": "ES",
+     "value": 5,
+     "es": "humedales españoles con lectura de agua reciente",
+     "fr": "zones humides espagnoles avec une mesure d'eau récente"
+    }
+   ],
+   "updated": "2026-10-19T13:32:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [],
+   "countries": [
+    "ES",
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "caudal-ecologico",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": null,
+   "signals": 26,
+   "figures": [
+    {
+     "country": "ES",
+     "value": 7,
+     "es": "de 26 puntos de aforo, por debajo del mínimo según datos provisionales",
+     "fr": "sur 26 stations, sous le minimum d'après des données provisoires"
+    }
+   ],
+   "updated": "2026-10-19T14:48:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [],
+   "countries": [
+    "ES"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "acuiferos-francia",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": null,
+   "signals": null,
+   "figures": [],
+   "updated": "2026-10-19T14:04:33+00:00",
+   "updated_from": "repo",
+   "countries": [
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "depuracion-y-bano",
+   "errors": [],
+   "status": "mantenimiento",
+   "status_note": "",
+   "fr_url": "https://asensio94.github.io/depuracion-y-bano/fr/",
+   "signals": 2048,
+   "figures": [
+    {
+     "country": "ES",
+     "value": 379,
+     "es": "aglomeraciones con indicios de no depurar como pide la directiva",
+     "fr": "agglomérations avec des indices d'épuration non conforme à la directive"
+    },
+    {
+     "country": "ES",
+     "value": 48,
+     "es": "zonas de baño con calidad insuficiente en la última temporada",
+     "fr": "zones de baignade de qualité insuffisante la dernière saison"
+    },
+    {
+     "country": "FR",
+     "value": 1509,
+     "es": "aglomeraciones no conformes según el veredicto oficial francés",
+     "fr": "agglomérations non conformes selon le verdict officiel"
+    },
+    {
+     "country": "FR",
+     "value": 112,
+     "es": "zonas de baño con calidad insuficiente en la última temporada",
+     "fr": "zones de baignade de qualité insuffisante la dernière saison"
+    }
+   ],
+   "updated": "2026-10-16T08:55:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [
+    "ES",
+    "FR"
+   ],
+   "countries": [
+    "ES",
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "zona-inundable",
+   "errors": [],
+   "status": "mantenimiento",
+   "status_note": "",
+   "fr_url": null,
+   "signals": 163,
+   "figures": [
+    {
+     "country": "ES",
+     "value": 2764,
+     "es": "edificios fechados en 2017 o después dentro de zonas inundables",
+     "fr": "bâtiments datés de 2017 ou après dans des zones inondables"
+    }
+   ],
+   "updated": "2026-10-13T19:24:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [],
+   "countries": [
+    "ES"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "estado-iba",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": "https://asensio94.github.io/estado-iba/fr/",
+   "signals": null,
+   "figures": [],
+   "updated": "2026-10-20T09:54:52+00:00",
+   "updated_from": "repo",
+   "countries": [
+    "ES",
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "riesgo-tendidos-aves",
+   "errors": [],
+   "status": null,
+   "status_note": "",
+   "fr_url": "https://asensio94.github.io/riesgo-tendidos-aves/index.fr.html",
+   "signals": 87,
+   "figures": [
+    {
+     "country": "FR",
+     "value": 4133,
+     "es": "apoyos y tramos de línea de riesgo alto dentro de 55 espacios Natura 2000",
+     "fr": "pylônes et tronçons de ligne à risque élevé dans 55 sites Natura 2000"
+    },
+    {
+     "country": "ES",
+     "value": 1327,
+     "es": "apoyos y tramos de línea de riesgo alto dentro de 32 espacios Natura 2000",
+     "fr": "pylônes et tronçons de ligne à risque élevé dans 32 sites Natura 2000"
+    }
+   ],
+   "updated": "2026-10-20T09:33:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [
+    "ES",
+    "FR"
+   ],
+   "countries": [
+    "ES",
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "sub-nocte",
+   "errors": [],
+   "status": "activo",
+   "status_note": "",
+   "fr_url": null,
+   "signals": 19,
+   "figures": [
+    {
+     "country": null,
+     "value": 5,
+     "es": "de 19 ciudades con previsión de migración alta o muy alta esta noche",
+     "fr": "villes sur 19 avec une migration forte ou très forte prévue cette nuit"
+    }
+   ],
+   "updated": "2026-10-20T08:50:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [],
+   "countries": [
+    "ES",
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "quien-tiene-sombra",
+   "errors": [],
+   "status": "mantenimiento",
+   "status_note": "",
+   "fr_url": "https://asensio94.github.io/quien-tiene-sombra/france.html",
+   "signals": null,
+   "figures": [],
+   "updated": "2026-10-16T08:29:28+00:00",
+   "updated_from": "repo",
+   "countries": [
+    "ES",
+    "FR"
+   ],
+   "stale": false
+  },
+  {
+   "slug": "cuaderno-campo",
+   "errors": [],
+   "status": "mantenimiento",
+   "status_note": "",
+   "fr_url": null,
+   "signals": null,
+   "figures": [],
+   "updated": "2026-10-15T19:54:49+00:00",
+   "updated_from": "repo",
+   "countries": [],
+   "stale": false
+  }
+ ]
+}
