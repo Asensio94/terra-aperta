@@ -33,7 +33,7 @@ T = {
         "method_title": "Cómo se lee y cómo se hace Terra Aperta",
         "method_cta": "Qué cuenta cada cifra, de dónde sale y qué no es esto: <a href=\"metodo.html\">método y glosario</a>.",
         "projects_h": "Qué hace cada proyecto",
-        "latin": "<i lang=\"la\">Terra aperta</i> es latín: «tierra abierta», a la vista de todos.",
+        "latin": "<i lang=\"la\">Terra Aperta</i> en latín significa «tierra abierta», a la vista de todos.",
         "switch": "Français",
         "read_h": "Cómo leer esta página",
         "read": [
@@ -116,7 +116,7 @@ T = {
         "method_title": "Comment lire et comment se fait Terra Aperta",
         "method_cta": "Ce que compte chaque chiffre, d'où il vient et ce que ce n'est pas : <a href=\"methode.html\">méthode et glossaire</a>.",
         "projects_h": "Ce que fait chaque projet",
-        "latin": "<i lang=\"la\">Terra aperta</i> est du latin : « terre ouverte », à la vue de tous.",
+        "latin": "En latin, <i lang=\"la\">Terra Aperta</i> signifie « terre ouverte », à la vue de tous.",
         "switch": "Español",
         "read_h": "Comment lire cette page",
         "read": [
