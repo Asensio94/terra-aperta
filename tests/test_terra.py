@@ -10,8 +10,8 @@ from pathlib import Path
 from terra.build import write
 from terra.collect import collect, project_state
 from terra.i18n import day, moment, n
-from terra.projects import PROJECTS, fig_caudal, fig_subnocte, fig_tendidos, fig_vigia
-from terra.web import render
+from terra.projects import MENU, PROJECTS, fig_caudal, fig_subnocte, fig_tendidos, fig_vigia
+from terra.web import nav, render
 
 NOW = datetime(2026, 10, 20, 10, 0, tzinfo=timezone.utc)
 BY_SLUG = {p.slug: p for p in PROJECTS}
@@ -116,8 +116,26 @@ class Page(unittest.TestCase):
             self.assertIn(p.name["fr"].replace("'", "&#x27;"), fr)
         with tempfile.TemporaryDirectory() as d:
             write(state, Path(d))
-            self.assertTrue((Path(d) / "fr" / "index.html").exists())
+            for f in ("index.html", "metodo.html", "fr/index.html", "fr/methode.html"):
+                self.assertTrue((Path(d) / f).exists(), f)
             self.assertEqual(len(json.loads((Path(d) / "estado.json").read_text("utf-8"))["projects"]), len(PROJECTS))
+
+
+class Bar(unittest.TestCase):
+    def test_every_project_is_in_the_menu_once(self):
+        slugs = [s for _key, _label, ss in MENU for s in ss]
+        self.assertEqual(sorted(slugs), sorted(p.slug for p in PROJECTS))
+        self.assertEqual(len(slugs), len(set(slugs)))
+
+    def test_menu_lists_each_page_and_marks_other_languages(self):
+        es, fr = nav("es", "home"), nav("fr", "home")
+        tendidos = BY_SLUG["riesgo-tendidos-aves"].url
+        self.assertIn(f'href="{tendidos}regions.es.html"', es)
+        self.assertNotIn(f'href="{tendidos}regions.es.html"', fr)   # French readers get the French map
+        self.assertIn(f'href="{BY_SLUG["sub-nocte"].url}rutas.html"', fr)
+        self.assertIn('<small class="lg" lang="es">ES</small>', fr)
+        self.assertIn('href="fr/"', es)
+        self.assertIn('href="../metodo.html"', nav("fr", "method"))
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ from pathlib import Path
 
 from .i18n import moment, n
 from .logo import LOGO_SVG, favicon_link
-from .projects import GROUP_INTRO, GROUPS, PROJECTS, Project
+from .projects import MENU, PROJECTS, Page, Project
 
 COMMON_CSS = (Path(__file__).with_name("common.css")).read_text(encoding="utf-8")
 ACCENT, ACCENT_DARK = "#a8432a", "#f08d6e"
@@ -22,45 +22,37 @@ FONTS = ("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600
 T = {
     "es": {
         "title": "Terra Aperta: datos abiertos sobre naturaleza en España y Francia",
-        "meta": ("Índice de dieciséis proyectos de datos abiertos que vigilan la naturaleza en España y Francia: "
-                 "qué se tramita, qué arde, qué cambia, cómo va el agua y dónde peligran las aves."),
+        "meta": ("Datos abiertos sobre la naturaleza de España y Francia: la migración de esta noche, lo que arde, "
+                 "lo que cambia en los espacios protegidos, lo que se tramita y el agua."),
         "h1": "Terra <span>Aperta</span>",
-        "lede": ("Dieciséis proyectos que vigilan la naturaleza en España y Francia con datos públicos: qué se quiere "
-                 "construir, qué arde, qué cambia en los espacios protegidos, cómo va el agua y dónde peligran las aves. "
-                 "Cada uno se actualiza solo y explica sus reglas. Esta página es el índice: dice qué hace cada uno y "
-                 "lleva a él."),
+        "lede": "Datos públicos sobre la naturaleza de España y Francia, leídos cada mañana.",
+        "figures_at": "Cifras del {t}.",
+        "nav_aria": "Proyectos",
+        "menu_method": "Método",
+        "method_page": "metodo.html",
+        "method_title": "Cómo se lee y cómo se hace Terra Aperta",
+        "method_cta": "Qué cuenta cada cifra, de dónde sale y qué no es esto: <a href=\"metodo.html\">método y glosario</a>.",
+        "projects_h": "Qué hace cada proyecto",
         "latin": "<i lang=\"la\">Terra aperta</i> es latín: «tierra abierta», a la vista de todos.",
-        "switch": ("Version française", "fr/"),
-        "fig_projects": "proyectos",
-        "fig_fr": "también en Francia",
-        "fig_signals": "señales publicadas ahora",
-        "fig_built": "revisado",
+        "switch": "Français",
         "read_h": "Cómo leer esta página",
         "read": [
-            "Cada ficha es un proyecto independiente, con su propia web. Arriba está la <b>pregunta</b> que responde "
-            "y debajo, en una o dos frases, <b>cómo</b> lo hace.",
-            "Las <b>cifras</b> son de hoy: un robot las lee cada día del fichero de señales que publica cada proyecto "
-            "(<a href=\"#glosario\">glosario</a>). La frase de al lado dice exactamente qué cuentan. No se suman entre "
-            "proyectos porque cada uno cuenta una cosa distinta.",
-            "<b>España / Francia</b> lleva a la web de cada país, en su idioma. Si un proyecto aún no tiene versión en "
-            "francés, se dice.",
+            "El <b>menú</b> de arriba lleva a cada web y a cada una de sus páginas. Si una página está en otro idioma, "
+            "lo indica con <small class=\"lg\">ES</small> o <small class=\"lg\">FR</small>.",
+            "Cada ficha es un proyecto independiente: la <b>pregunta</b> que responde, su <b>cifra de hoy</b> y la frase "
+            "que dice exactamente qué cuenta. Un robot la lee cada mañana del fichero de señales que publica el proyecto "
+            "(<a href=\"#glosario\">glosario</a>). Las cifras no se suman entre proyectos: cada uno cuenta una cosa "
+            "distinta.",
             "La <b>fecha</b> es la de su última actualización. Si lleva más tiempo del normal sin actualizarse, la ficha "
             "lo marca en vez de esconderlo.",
-            "El <b>estado</b> viene del propio proyecto: <span class=\"st st-activo\">activo</span> se actualiza y se "
-            "sigue mejorando; <span class=\"st st-mantenimiento\">mantenimiento</span> se actualiza y se corrige, pero "
-            "no crece; <span class=\"st st-aparcado\">aparcado</span> está parado, con el motivo a la vista.",
+            "Todos se actualizan solos. Los que dicen <span class=\"st st-mantenimiento\">mantenimiento</span> se "
+            "corrigen, pero por ahora no crecen.",
         ],
         "status": {"activo": "activo", "mantenimiento": "mantenimiento", "aparcado": "aparcado"},
-        "es_link": "España", "fr_link": "France", "web": "Web", "code": "Código y método",
-        "fr_missing": "Aún sin versión en francés.",
-        "es_only_fr": "Web en español.",
-        "no_web": "Sin web publicada.",
         "updated": "Actualizado el {t}",
         "updated_repo": "Última actividad del repositorio: {t}",
         "stale": "Lleva más de {d} días sin actualizarse",
-        "no_figure": "No publica cifras para otros proyectos.",
         "failed": "Hoy no se ha podido leer su fichero de señales.",
-        "covers": "Cubre",
         "country": {"ES": "España", "FR": "Francia", None: ""},
         "is_h": "Qué es y qué no es",
         "is": [
@@ -110,50 +102,40 @@ T = {
         "principle": "Datos públicos, reglas a la vista y cada cifra enlazada a su fuente. Indicios, no veredictos.",
         "footer": ("Hecho con datos públicos por un particular. Código y método en "
                    "<a href=\"{repo}\">GitHub</a>; para avisar de un error, abre una incidencia allí."),
-        "siblings_aria": "Proyectos",
     },
     "fr": {
         "title": "Terra Aperta : données ouvertes sur la nature en Espagne et en France",
-        "meta": ("Index de seize projets de données ouvertes qui surveillent la nature en Espagne et en France : "
-                 "ce qui s'autorise, ce qui brûle, ce qui change, l'état de l'eau et les dangers pour les oiseaux."),
+        "meta": ("Données ouvertes sur la nature en Espagne et en France : la migration de cette nuit, ce qui brûle, "
+                 "ce qui change dans les sites protégés, ce qui s'autorise et l'eau."),
         "h1": "Terra <span>Aperta</span>",
-        "lede": ("Seize projets qui surveillent la nature en Espagne et en France avec des données publiques : ce qui "
-                 "veut se construire, ce qui brûle, ce qui change dans les sites protégés, l'état de l'eau et les dangers "
-                 "pour les oiseaux. Chacun se met à jour tout seul et explique ses règles. Cette page en est l'index : "
-                 "elle dit ce que fait chacun et y mène."),
+        "lede": "Des données publiques sur la nature en Espagne et en France, relues chaque matin.",
+        "figures_at": "Chiffres du {t}.",
+        "nav_aria": "Projets",
+        "menu_method": "Méthode",
+        "method_page": "methode.html",
+        "method_title": "Comment lire et comment se fait Terra Aperta",
+        "method_cta": "Ce que compte chaque chiffre, d'où il vient et ce que ce n'est pas : <a href=\"methode.html\">méthode et glossaire</a>.",
+        "projects_h": "Ce que fait chaque projet",
         "latin": "<i lang=\"la\">Terra aperta</i> est du latin : « terre ouverte », à la vue de tous.",
-        "switch": ("Versión en español", "../"),
-        "fig_projects": "projets",
-        "fig_fr": "aussi en France",
-        "fig_signals": "signaux publiés en ce moment",
-        "fig_built": "vérifié",
+        "switch": "Español",
         "read_h": "Comment lire cette page",
         "read": [
-            "Chaque fiche est un projet indépendant, avec son propre site. En haut, la <b>question</b> à laquelle il "
-            "répond ; en dessous, en une ou deux phrases, <b>comment</b>.",
-            "Les <b>chiffres</b> sont ceux du jour : un robot les lit chaque jour dans le fichier de signaux que publie "
-            "chaque projet (<a href=\"#glossaire\">glossaire</a>). La phrase à côté dit exactement ce qu'ils comptent. "
-            "On ne les additionne pas d'un projet à l'autre : chacun compte autre chose.",
-            "<b>España / France</b> mène au site de chaque pays, dans sa langue. Si un projet n'a pas encore de version "
-            "française, c'est indiqué.",
+            "Le <b>menu</b> du haut mène à chaque site et à chacune de ses pages. Si une page est dans une autre langue, "
+            "il l'indique par <small class=\"lg\">ES</small> ou <small class=\"lg\">FR</small>.",
+            "Chaque fiche est un projet indépendant : la <b>question</b> à laquelle il répond, son <b>chiffre du jour</b> "
+            "et la phrase qui dit exactement ce qu'il compte. Un robot le lit chaque matin dans le fichier de signaux que "
+            "publie le projet (<a href=\"#glossaire\">glossaire</a>). On n'additionne pas les chiffres d'un projet à "
+            "l'autre : chacun compte autre chose.",
             "La <b>date</b> est celle de sa dernière mise à jour. S'il reste plus longtemps que d'habitude sans mise à "
             "jour, la fiche le signale au lieu de le cacher.",
-            "L'<b>état</b> vient du projet lui-même : <span class=\"st st-activo\">actif</span> se met à jour et "
-            "s'améliore ; <span class=\"st st-mantenimiento\">maintenance</span> se met à jour et se corrige, sans "
-            "nouvelles fonctions ; <span class=\"st st-aparcado\">en pause</span> est arrêté, raison à l'appui sur son "
-            "dépôt.",
+            "Tous se mettent à jour seuls. Ceux marqués <span class=\"st st-mantenimiento\">maintenance</span> sont "
+            "corrigés, mais n'évoluent pas pour l'instant.",
         ],
         "status": {"activo": "actif", "mantenimiento": "maintenance", "aparcado": "en pause"},
-        "es_link": "España", "fr_link": "France", "web": "Site", "code": "Code et méthode",
-        "fr_missing": "Pas encore de version française.",
-        "es_only_fr": "Site en espagnol.",
-        "no_web": "Pas de site publié.",
         "updated": "Mis à jour le {t}",
         "updated_repo": "Dernière activité du dépôt : {t}",
         "stale": "Plus de {d} jours sans mise à jour",
-        "no_figure": "Ne publie pas de chiffres pour les autres projets.",
         "failed": "Son fichier de signaux n'a pas pu être lu aujourd'hui.",
-        "covers": "Couvre",
         "country": {"ES": "Espagne", "FR": "France", None: ""},
         "is_h": "Ce que c'est, et ce que ce n'est pas",
         "is": [
@@ -208,30 +190,64 @@ T = {
         "principle": "Données publiques, règles en clair et chaque chiffre relié à sa source. Des indices, pas des verdicts.",
         "footer": ("Fait avec des données publiques par un particulier. Code et méthode sur "
                    "<a href=\"{repo}\">GitHub</a> ; pour signaler une erreur, ouvrez-y un ticket."),
-        "siblings_aria": "Projets",
     },
 }
 
+
+BAR = {"bg": "#221d1a", "panel": "#2c2521", "line": "#41362f", "ink": "#efe7df", "dim": "#cbbfb5", "muted": "#a2958b"}
+
 CSS = """
-.switch{justify-self:start;font:600 14px/1 var(--font-title);text-transform:uppercase;letter-spacing:.08em}
+.tn{position:sticky;top:0;z-index:30;background:%(bg)s;color:%(ink)s;border-bottom:1px solid %(line)s;
+  font:600 15px/1 var(--font-title);text-transform:uppercase;letter-spacing:.06em}
+.tn .in{max-width:1180px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:0 12px}
+.tn a{color:inherit;text-decoration:none}
+.tn .brand{display:flex;align-items:center;gap:6px;padding:10px 0;white-space:nowrap;font-weight:700}
+.tn .brand span{color:%(accent)s}
+.tn .logo{width:20px;height:20px;margin:0;color:%(ink)s}
+.tn .logo .logo-breast{fill:%(accent)s}
+.tn ul{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;flex:1}
+.tn li{position:relative}
+.tn .top,.tn summary{display:block;padding:13px 10px 11px;white-space:nowrap;border-bottom:3px solid transparent;color:%(dim)s;cursor:pointer;list-style:none}
+.tn summary::-webkit-details-marker{display:none}
+.tn summary::after{content:"";display:inline-block;margin-left:6px;border:4px solid transparent;border-top-color:currentColor;border-bottom:0;vertical-align:2px}
+.tn .top:hover,.tn summary:hover,.tn details[open] summary{color:#fff}
+.tn details[open] summary,.tn .top[aria-current=page]{color:#fff;border-bottom-color:%(accent)s}
+.tn .dd{position:absolute;left:0;top:100%%;min-width:260px;background:%(panel)s;border:1px solid %(line)s;
+  box-shadow:0 12px 28px rgba(0,0,0,.35);padding:6px 0;display:grid;text-transform:none;letter-spacing:0;font:500 16px/1.25 var(--font-text)}
+.tn li:nth-last-child(-n+3) .dd{left:auto;right:0}
+.tn .dd a{padding:8px 14px;color:%(ink)s}
+.tn .dd a:hover,.tn .dd a:focus-visible{background:%(line)s}
+.tn .dd-h{margin:10px 14px 2px;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;color:%(muted)s}
+.tn .dd-h:first-child{margin-top:6px}
+.tn .lang{padding:6px 9px 5px;border:1.5px solid %(line)s;font-size:13px;white-space:nowrap;color:%(dim)s}
+.tn .lang:hover{border-color:%(accent)s;color:#fff}
+.tn a:focus-visible,.tn summary:focus-visible{outline:2px solid %(accent)s;outline-offset:-2px}
+.lg{display:inline-block;font:600 10.5px/1 var(--font-title);letter-spacing:.06em;padding:2px 4px 1px;border:1px solid currentColor;margin-left:6px;opacity:.7;vertical-align:1px}
+@media (max-width:820px){
+  .tn{position:relative}.tn .in{flex-wrap:wrap}.tn .brand{order:1}.tn .lang{order:2;margin-left:auto}
+  .tn ul{order:3;flex-basis:100%%;margin:0 -10px}
+  .tn li{position:static}.tn .dd,.tn li:nth-last-child(-n+3) .dd{left:8px;right:8px;min-width:0}
+}
+.site-header{padding-bottom:6px}
 .site-header .latin{margin:0;color:var(--muted);font-size:15px}
-main{max-width:1440px;margin:0 auto;padding:0 16px}
-.reading{max-width:900px}
-.reading h2,.group h2,.prose h2{margin:28px 0 6px;font:700 28px/1 var(--font-title);text-transform:uppercase;letter-spacing:.03em}
-.reading ol{margin:8px 0 0;padding-left:22px;display:grid;gap:6px}
-.group > p{margin:0 0 12px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px}
+main{max-width:1180px;margin:0 auto;padding:0 16px 8px}
+main h2{margin:30px 0 10px;font:700 26px/1 var(--font-title);text-transform:uppercase;letter-spacing:.03em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%%,330px),1fr));gap:14px;margin-top:14px}
 .card{display:grid;gap:10px;align-content:start;border-top:4px solid var(--p);padding:14px 16px 16px}
 .card h3{margin:0;font:700 23px/1.05 var(--font-title);text-transform:uppercase;letter-spacing:.02em}
 .card h3 a{text-decoration:none}
 .card h3 a:hover{text-decoration:underline;text-decoration-color:var(--p)}
-.card .q{margin:0;font-weight:600}
-.card .how{margin:0;font-size:15.5px}
-.card .meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:14px}
-.card .links{display:flex;flex-wrap:wrap;gap:6px 14px;font:600 15px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.06em}
-.card .links a{text-decoration-color:var(--p)}
-.card .links .code{font-weight:500;color:var(--muted)}
-.figs{margin:0;padding:10px 0 0;border-top:1px solid var(--line);display:grid;gap:6px}
+.card .q{margin:0}
+.card.lead{margin-top:18px;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px 28px;padding:20px 22px}
+.card.lead h3{font-size:34px}
+.card.lead .q{font-size:19px}
+.card.lead .figs{grid-row:1/span 4;grid-column:2;border-top:0;padding:0;align-content:center}
+.card.lead .figs b{font-size:46px}
+.card.lead .go{display:flex;flex-wrap:wrap;gap:8px}
+.card.lead .go a{font:600 14px/1 var(--font-title);text-transform:uppercase;letter-spacing:.07em;padding:8px 11px 7px;border:1.5px solid var(--p);text-decoration:none}
+.card.lead .go a:hover{background:var(--p);color:#fff}
+@media (max-width:700px){.card.lead{grid-template-columns:1fr}.card.lead .figs{grid-row:auto;grid-column:auto}}
+.figs{margin:0;padding:10px 0 0;border-top:1px solid var(--line);display:grid;gap:8px}
 .figs div{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:baseline}
 .figs b{font:600 22px/1 var(--font-data);font-variant-numeric:tabular-nums;color:var(--accent)}
 .figs span{font-size:14.5px}
@@ -239,18 +255,82 @@ main{max-width:1440px;margin:0 auto;padding:0 16px}
 .when{color:var(--muted);font-size:13.5px;margin:0}
 .warn{color:var(--ink);font-weight:600}
 .warn::before{content:"⚠ ";color:var(--accent)}
-.st{display:inline-block;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor}
-.st-activo{color:var(--natura)}
+.st{display:inline-block;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor;vertical-align:4px;margin-left:8px}
 .st-mantenimiento{color:var(--muted)}
 .st-aparcado{color:var(--accent)}
-.flags{font:500 13px/1 var(--font-data);color:var(--muted)}
+.cta{margin:30px 0 0;font-size:16px}
 .prose{max-width:900px}
 .prose ul,.prose ol{padding-left:22px;display:grid;gap:6px}
-dl.gloss{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:8px 18px;max-width:900px}
+dl.gloss{display:grid;grid-template-columns:minmax(140px,max-content) 1fr;gap:8px 18px;max-width:900px}
 dl.gloss dt{font:600 15px/1.35 var(--font-title);text-transform:uppercase;letter-spacing:.05em}
 dl.gloss dd{margin:0}
 @media (max-width:640px){dl.gloss{grid-template-columns:1fr}dl.gloss dd{margin-bottom:6px}}
-"""
+""" % {**BAR, "accent": ACCENT_DARK}
+
+# Closes the open menu on a click elsewhere or on Escape, so only one is open at a time.
+JS = """<script>
+(function(){var all=function(){return document.querySelectorAll('.tn details[open]')};
+document.addEventListener('click',function(e){all().forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')all().forEach(function(d){d.removeAttribute('open');d.querySelector('summary').focus()})});
+})();</script>"""
+
+# Each project's own accent (estilo-comun/GUIA.md) marks its card, so it reads as the same
+# colour the reader will find on its site.
+ACCENTS = {
+    "observatorio-alegaciones": "#9f1d35", "vigia-incendios": "#c2410c", "centinela-natura": "#2f7a55",
+    "vigilancia-humedales": "#1d6a96", "sub-nocte": "#4a4fb5", "riesgo-tendidos-aves": "#8a5a00",
+    "grafo-promotores": "#6b3fa0", "caudal-ecologico": "#007c91", "estado-iba": "#a3336e",
+    "depuracion-y-bano": "#2b59a6", "zona-inundable": "#4a5d75", "acuiferos-francia": "#7f3b8c",
+}
+BY_SLUG = {p.slug: p for p in PROJECTS}
+
+
+def _pages(p: Project, lang: str) -> list[Page]:
+    return [pg for pg in p.pages if pg.only in (None, lang)]
+
+
+def _tag(pg: Page, lang: str) -> str:
+    return f'<small class="lg" lang="{pg.lang}">{pg.lang.upper()}</small>' if pg.lang != lang else ""
+
+
+def _link(p: Project, pg: Page, lang: str) -> str:
+    return f'<a href="{pg.href(p.url)}" hreflang="{pg.lang}">{escape(getattr(pg, lang))}{_tag(pg, lang)}</a>'
+
+
+def _main_page(p: Project, lang: str) -> Page:
+    pages = _pages(p, lang)
+    return next((pg for pg in pages if pg.lang == lang), pages[0])
+
+
+def nav(lang: str, here: str) -> str:
+    """The top bar. `here` is "home" or "method"."""
+    L = T[lang]
+    items = []
+    for _key, label, slugs in MENU:
+        ps = [BY_SLUG[s] for s in slugs]
+        links = [(p, pg) for p in ps for pg in _pages(p, lang)]
+        if len(links) == 1:
+            p, pg = links[0]
+            items.append(f'<li><a class="top" href="{pg.href(p.url)}">{escape(label[lang])}{_tag(pg, lang)}</a></li>')
+            continue
+        body = []
+        for p in ps:
+            pages = _pages(p, lang)
+            if len(ps) > 1 and len(pages) > 1:
+                body.append(f'<p class="dd-h">{escape(p.name[lang])}</p>')
+            body += [_link(p, pg, lang) for pg in pages]
+        items.append(f'<li><details><summary>{escape(label[lang])}</summary><div class="dd">{"".join(body)}</div>'
+                     "</details></li>")
+    cur = ' aria-current="page"' if here == "method" else ""
+    items.append(f'<li><a class="top" href="{L["method_page"]}"{cur}>{escape(L["menu_method"])}</a></li>')
+    other = "fr" if lang == "es" else "es"
+    switch = {("es", "home"): "fr/", ("es", "method"): "fr/methode.html",
+              ("fr", "home"): "../", ("fr", "method"): "../metodo.html"}[(lang, here)]
+    return (f'<nav class="tn" aria-label="{escape(L["nav_aria"])}"><div class="in">'
+            f'<a class="brand" href="./">{LOGO_SVG}Terra <span>Aperta</span></a>'
+            f'<ul>{"".join(items)}</ul>'
+            f'<a class="lang" href="{switch}" hreflang="{other}" lang="{other}">{L["switch"]}</a>'
+            "</div></nav>")
 
 
 def _when(st: dict, p: Project, lang: str) -> str:
@@ -265,30 +345,10 @@ def _when(st: dict, p: Project, lang: str) -> str:
     return out + "</p>"
 
 
-def _links(st: dict, p: Project, lang: str) -> str:
-    L = T[lang]
-    parts = []
-    if not p.has_web:
-        note = f'<span class="note">{L["no_web"]}</span>'
-    else:
-        note = ""
-        if "ES" in p.countries or not p.countries:
-            parts.append(f'<a href="{p.url}" hreflang="es">{L["es_link"] if p.countries else L["web"]}</a>')
-        if st.get("fr_url"):
-            parts.append(f'<a href="{st["fr_url"]}" hreflang="fr">{L["fr_link"]}</a>')
-        elif "FR" in st["countries"] and "ES" not in p.countries:
-            parts.append(f'<a href="{p.url}" hreflang="es">{L["fr_link"]}</a>')
-            note = f'<span class="note">{L["es_only_fr"]}</span>'
-        elif "ES" in p.countries:
-            note = f'<span class="note">{L["fr_missing"]}</span>'
-    parts.append(f'<a class="code" href="{p.repo}">{L["code"]}</a>')
-    return f'<div class="links">{"".join(parts)}</div>' + (f'<div class="meta">{note}</div>' if note else "")
-
-
 def _figs(st: dict, p: Project, lang: str) -> str:
     L = T[lang]
     if not p.figure:
-        return f'<p class="when">{L["no_figure"]}</p>'
+        return ""
     if "signals" in st["errors"]:
         return f'<p class="when warn">{L["failed"]}</p>'
     rows = []
@@ -299,64 +359,33 @@ def _figs(st: dict, p: Project, lang: str) -> str:
     return f'<div class="figs">{"".join(rows)}</div>' if rows else ""
 
 
-def card(p: Project, st: dict, lang: str, colors: dict[str, str]) -> str:
+def card(p: Project, st: dict, lang: str, lead: bool = False) -> str:
     L = T[lang]
     status = st.get("status")
-    badge = f'<span class="st st-{status}">{L["status"][status]}</span>' if status else ""
-    flags = " · ".join(L["country"][c] for c in st["countries"])
-    covers = f'<span class="flags">{L["covers"]}: {flags}</span>' if flags else ""
-    name_href = st.get("fr_url") if lang == "fr" and st.get("fr_url") else (p.url if p.has_web else p.repo)
+    badge = f'<span class="st st-{status}">{L["status"][status]}</span>' if status in ("mantenimiento", "aparcado") else ""
+    main = _main_page(p, lang)
+    go = f'<div class="go">{"".join(_link(p, pg, lang) for pg in _pages(p, lang))}</div>' if lead else ""
     return (
-        f'<article class="card" id="{p.slug}" style="--p:{colors.get(p.slug, "var(--accent)")}">'
-        f'<h3><a href="{name_href}">{escape(p.name[lang])}</a></h3>'
-        f'<div class="meta">{badge}{covers}</div>'
+        f'<article class="card{" lead" if lead else ""}" id="{p.slug}" style="--p:{ACCENTS.get(p.slug, "var(--accent)")}">'
+        f'<h3><a href="{main.href(p.url)}" hreflang="{main.lang}">{escape(p.name[lang])}</a>{badge}</h3>'
         f'<p class="q">{escape(p.question[lang])}</p>'
-        f'<p class="how">{escape(p.how[lang])}</p>'
-        f'{_figs(st, p, lang)}{_when(st, p, lang)}{_links(st, p, lang)}'
+        f'{_figs(st, p, lang)}{go}{_when(st, p, lang)}'
         "</article>"
     )
 
 
-# Each project's own accent (estilo-comun/GUIA.md) marks its card, so it reads as the same
-# colour the reader will find on its site.
-ACCENTS = {
-    "observatorio-alegaciones": "#9f1d35", "vigia-incendios": "#c2410c", "centinela-natura": "#2f7a55",
-    "vigilancia-humedales": "#1d6a96", "sub-nocte": "#4a4fb5", "riesgo-tendidos-aves": "#8a5a00",
-    "grafo-promotores": "#6b3fa0", "cartera-cotizadas": "#0f6b6b", "cuaderno-campo": "#5d6b1f",
-    "caudal-ecologico": "#007c91", "estado-iba": "#a3336e", "barbechos-esteparias": "#7c4a2d",
-    "depuracion-y-bano": "#2b59a6", "zona-inundable": "#4a5d75", "quien-tiene-sombra": "#3f7d20",
-    "acuiferos-francia": "#7f3b8c",
-}
-
-
-def render(state: dict, lang: str) -> str:
+def _page(lang: str, here: str, title: str, body: str) -> str:
     L = T[lang]
-    by_slug = {s["slug"]: s for s in state["projects"]}
-    built = moment(datetime.fromisoformat(state["generated"].replace("Z", "+00:00")), lang)
-    total_signals = sum(s.get("signals") or 0 for s in state["projects"])
-    in_fr = sum("FR" in s["countries"] for s in state["projects"])
-
-    groups = []
-    for g, names in GROUPS.items():
-        cards = "".join(card(p, by_slug[p.slug], lang, ACCENTS) for p in PROJECTS if p.group == g)
-        groups.append(f'<section class="group" id="{g}"><h2>{escape(names[lang])}</h2>'
-                      f'<p>{escape(GROUP_INTRO[g][lang])}</p><div class="grid">{cards}</div></section>')
-    gid = "glosario" if lang == "es" else "glossaire"
-    siblings = "".join(
-        f'<li><a href="{(by_slug[p.slug].get("fr_url") if lang == "fr" else None) or (p.url if p.has_web else p.repo)}">'
-        f'{escape(p.name[lang])}</a></li>' for p in PROJECTS)
-    figures = [(n(len(PROJECTS), lang), L["fig_projects"]), (n(in_fr, lang), L["fig_fr"]),
-               (n(total_signals, lang), L["fig_signals"])]
-    alt = "fr" if lang == "es" else "es"
-    alt_href = "fr/" if lang == "es" else "../"
+    other = "fr" if lang == "es" else "es"
+    alt = ("fr/" if lang == "es" else "../") + ("" if here == "home" else T[other]["method_page"])
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{escape(L["title"])}</title>
+<title>{escape(title)}</title>
 <meta name="description" content="{escape(L["meta"])}">
-<link rel="alternate" hreflang="{alt}" href="{alt_href}">
+<link rel="alternate" hreflang="{other}" href="{alt}">
 {favicon_link(ACCENT, ACCENT_DARK)}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
@@ -367,28 +396,66 @@ def render(state: dict, lang: str) -> str:
 </style>
 </head>
 <body>
-<header class="site-header">
-  <a class="switch" href="{L["switch"][1]}" hreflang="{alt}" lang="{alt}">{L["switch"][0]}</a>
-  <h1>{LOGO_SVG}{L["h1"]}</h1>
-  <p class="lede">{escape(L["lede"])}</p>
-  <p class="latin">{L["latin"]}</p>
-  <div class="figures">{"".join(f"<div><b>{a}</b><span>{escape(b)}</span></div>" for a, b in figures)}
-    <div><b style="font-size:18px">{escape(built)}</b><span>{escape(L["fig_built"])}</span></div></div>
-</header>
-<main>
-<section class="reading"><h2>{L["read_h"]}</h2><ol>{"".join(f"<li>{x}</li>" for x in L["read"])}</ol></section>
-{"".join(groups)}
-<section class="prose" id="{"que-es" if lang == "es" else "ce-que-c-est"}"><h2>{escape(L["is_h"])}</h2>
-<ul>{"".join(f"<li>{x}</li>" for x in L["is"])}</ul></section>
-</main>
-<section class="method"><h2>{escape(L["method_h"])}</h2><ol>{"".join(f"<li>{x}</li>" for x in L["method"])}</ol>
-<h2 id="{gid}" style="margin-top:28px">{escape(L["gloss_h"])}</h2>
-<dl class="gloss">{"".join(f"<dt>{a}</dt><dd>{b}</dd>" for a, b in L["gloss"])}</dl></section>
+{nav(lang, here)}
+{body}
 <footer class="site-footer">
   <p class="principle">{escape(L["principle"])}</p>
   <p>{L["footer"].format(repo=REPO)}</p>
-  <nav aria-label="{L["siblings_aria"]}"><ul class="siblings">{siblings}</ul></nav>
 </footer>
+{JS}
 </body>
 </html>
 """
+
+
+def render(state: dict, lang: str) -> str:
+    """The home page: the bar, one line of introduction and one card per project, in menu order."""
+    L = T[lang]
+    by_slug = {s["slug"]: s for s in state["projects"]}
+    built = moment(datetime.fromisoformat(state["generated"].replace("Z", "+00:00")), lang)
+    parts, loose = [], []
+    for i, (key, label, slugs) in enumerate(MENU):
+        cards = [card(BY_SLUG[s], by_slug[s], lang, lead=i == 0) for s in slugs]
+        if i == 0:
+            parts.append(cards[0])
+        elif len(slugs) == 1:
+            loose.append(cards[0])  # single projects share one grid
+        else:
+            if loose:
+                parts.append(f'<div class="grid">{"".join(loose)}</div>')
+                loose = []
+            parts.append(f'<section id="{key}"><h2>{escape(label[lang])}</h2>'
+                         f'<div class="grid">{"".join(cards)}</div></section>')
+    if loose:
+        parts.append(f'<div class="grid">{"".join(loose)}</div>')
+    body = f"""<header class="site-header">
+  <h1>{LOGO_SVG}{L["h1"]}</h1>
+  <p class="lede">{escape(L["lede"])}</p>
+  <p class="latin">{L["latin"]} {escape(L["figures_at"].format(t=built))}</p>
+</header>
+<main>
+{"".join(parts)}
+<p class="cta">{L["method_cta"]}</p>
+</main>"""
+    return _page(lang, "home", L["title"], body)
+
+
+def render_method(state: dict, lang: str) -> str:
+    """Everything that explains the page: how to read it, what each project does, what this is not, glossary."""
+    L = T[lang]
+    gid = "glosario" if lang == "es" else "glossaire"
+    projects = "".join(
+        f'<dt><a href="{_main_page(p, lang).href(p.url)}">{escape(p.name[lang])}</a></dt><dd>{escape(p.how[lang])}</dd>'
+        for p in PROJECTS)
+    body = f"""<header class="site-header">
+  <h1>{escape(L["method_title"])}</h1>
+</header>
+<main class="prose">
+<section><h2>{escape(L["read_h"])}</h2><ol>{"".join(f"<li>{x}</li>" for x in L["read"])}</ol></section>
+<section><h2>{escape(L["projects_h"])}</h2><dl class="gloss">{projects}</dl></section>
+<section><h2>{escape(L["is_h"])}</h2><ul>{"".join(f"<li>{x}</li>" for x in L["is"])}</ul></section>
+<section><h2>{escape(L["method_h"])}</h2><ol>{"".join(f"<li>{x}</li>" for x in L["method"])}</ol></section>
+<section><h2 id="{gid}">{escape(L["gloss_h"])}</h2>
+<dl class="gloss">{"".join(f"<dt>{a}</dt><dd>{b}</dd>" for a, b in L["gloss"])}</dl></section>
+</main>"""
+    return _page(lang, "method", f'{L["method_title"]} · Terra Aperta', body)

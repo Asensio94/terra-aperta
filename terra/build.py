@@ -1,4 +1,4 @@
-"""Read every sibling project and write docs/index.html, docs/fr/index.html and docs/estado.json."""
+"""Read every sibling project and write the home and method pages (es, fr) and docs/estado.json."""
 from __future__ import annotations
 
 import json
@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 from .collect import collect
-from .web import render
+from .web import T, render, render_method
 
 DOCS = Path(__file__).resolve().parent.parent / "docs"
 # If most projects cannot be read, the problem is the network, not the projects: keep the
@@ -19,6 +19,8 @@ def write(state: dict, docs: Path = DOCS) -> None:
     (docs / "fr").mkdir(parents=True, exist_ok=True)
     (docs / "index.html").write_text(render(state, "es"), encoding="utf-8")
     (docs / "fr" / "index.html").write_text(render(state, "fr"), encoding="utf-8")
+    (docs / T["es"]["method_page"]).write_text(render_method(state, "es"), encoding="utf-8")
+    (docs / "fr" / T["fr"]["method_page"]).write_text(render_method(state, "fr"), encoding="utf-8")
     (docs / "estado.json").write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8")
     (docs / ".nojekyll").write_text("", encoding="utf-8")
 
