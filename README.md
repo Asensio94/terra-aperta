@@ -5,7 +5,7 @@ pregunta responde cada uno, cómo lo hace, su cifra del día y dónde está su w
 cada día lee lo que ya publica cada proyecto. Web: <https://asensio94.github.io/naturaleza/> · en francés:
 <https://asensio94.github.io/naturaleza/fr/>
 
-*Terra aperta* es latín: «tierra abierta», el territorio con sus datos a la vista.
+*Terra Aperta* en latín significa «tierra abierta», a la vista de todos.
 
 > **Estado: activo.** Se actualiza solo y sigue en desarrollo.
 
