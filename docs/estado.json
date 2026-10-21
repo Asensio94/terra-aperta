@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-21T09:12Z",
+ "generated": "2026-10-21T13:12Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -11,12 +11,12 @@
    "figures": [
     {
      "country": null,
-     "value": 5,
+     "value": 12,
      "es": "de 19 ciudades con previsión de migración alta o muy alta esta noche",
      "fr": "villes sur 19 avec une migration forte ou très forte prévue cette nuit"
     }
    ],
-   "updated": "2026-10-20T10:35:00+00:00",
+   "updated": "2026-10-21T10:53:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -79,7 +79,7 @@
      "fr": "changements confirmés à l'intérieur de sites Natura 2000 depuis le 30 septembre 2025"
     }
    ],
-   "updated": "2026-10-20T12:51:00+00:00",
+   "updated": "2026-10-21T13:04:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -146,22 +146,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": null,
-   "signals": 343,
+   "signals": 348,
    "figures": [
     {
      "country": "ES",
-     "value": 165,
+     "value": 167,
      "es": "anuncios del BOE con trámite ambiental desde el 27 de julio de 2026",
      "fr": "avis du Journal officiel espagnol (BOE) avec procédure environnementale depuis le 27 juillet 2026"
     },
     {
      "country": "ES",
-     "value": 178,
+     "value": 181,
      "es": "resoluciones finales leídas, con sus condiciones",
      "fr": "décisions finales lues, avec leurs prescriptions"
     }
    ],
-   "updated": "2026-10-20T12:52:00+00:00",
+   "updated": "2026-10-21T13:05:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -177,7 +177,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-10-20T12:57:18+00:00",
+   "updated": "2026-10-21T13:12:12+00:00",
    "updated_from": "repo",
    "countries": [
     "ES"
@@ -199,7 +199,7 @@
      "fr": "zones humides espagnoles avec une mesure d'eau récente"
     }
    ],
-   "updated": "2026-10-20T11:48:00+00:00",
+   "updated": "2026-10-21T12:00:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -214,16 +214,16 @@
    "status": "activo",
    "status_note": "",
    "fr_url": null,
-   "signals": 26,
+   "signals": 24,
    "figures": [
     {
      "country": "ES",
      "value": 6,
-     "es": "de 26 puntos de aforo, por debajo del mínimo según datos provisionales",
-     "fr": "sur 26 stations, sous le minimum d'après des données provisoires"
+     "es": "de 24 puntos de aforo, por debajo del mínimo según datos provisionales",
+     "fr": "sur 24 stations, sous le minimum d'après des données provisoires"
     }
    ],
-   "updated": "2026-10-20T12:51:00+00:00",
+   "updated": "2026-10-21T13:03:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -239,7 +239,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-10-20T12:16:55+00:00",
+   "updated": "2026-10-21T12:31:46+00:00",
    "updated_from": "repo",
    "countries": [
     "FR"
