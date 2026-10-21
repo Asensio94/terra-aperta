@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T10:27Z",
+ "generated": "2026-10-21T09:12Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -16,7 +16,7 @@
      "fr": "villes sur 19 avec une migration forte ou très forte prévue cette nuit"
     }
    ],
-   "updated": "2026-10-20T08:50:00+00:00",
+   "updated": "2026-10-20T10:35:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -31,22 +31,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": "https://asensio94.github.io/vigia-incendios/fr/",
-   "signals": 674,
+   "signals": 682,
    "figures": [
     {
      "country": "ES",
-     "value": 76,
-     "es": "incendios que tocan la Red Natura 2000, de 513 con focos desde el 29 de septiembre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 513 avec foyers depuis le 29 septembre 2026"
+     "value": 75,
+     "es": "incendios que tocan la Red Natura 2000, de 516 con focos desde el 29 de septiembre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 516 avec foyers depuis le 29 septembre 2026"
     },
     {
      "country": "FR",
      "value": 23,
-     "es": "incendios que tocan la Red Natura 2000, de 161 con focos desde el 12 de octubre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 161 avec foyers depuis le 12 octobre 2026"
+     "es": "incendios que tocan la Red Natura 2000, de 166 con focos desde el 12 de octubre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 166 avec foyers depuis le 12 octobre 2026"
     }
    ],
-   "updated": "2026-10-20T10:04:00+00:00",
+   "updated": "2026-10-21T07:39:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -79,7 +79,7 @@
      "fr": "changements confirmés à l'intérieur de sites Natura 2000 depuis le 30 septembre 2025"
     }
    ],
-   "updated": "2026-10-20T09:44:00+00:00",
+   "updated": "2026-10-20T12:51:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -99,7 +99,7 @@
    "fr_url": "https://asensio94.github.io/estado-iba/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-10-20T09:54:52+00:00",
+   "updated": "2026-10-20T13:34:45+00:00",
    "updated_from": "repo",
    "countries": [
     "ES",
@@ -128,7 +128,7 @@
      "fr": "pylônes et tronçons de ligne à risque élevé dans 32 sites Natura 2000"
     }
    ],
-   "updated": "2026-10-20T09:33:00+00:00",
+   "updated": "2026-10-20T10:27:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -146,22 +146,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": null,
-   "signals": 329,
+   "signals": 343,
    "figures": [
     {
      "country": "ES",
-     "value": 158,
+     "value": 165,
      "es": "anuncios del BOE con trámite ambiental desde el 27 de julio de 2026",
      "fr": "avis du Journal officiel espagnol (BOE) avec procédure environnementale depuis le 27 juillet 2026"
     },
     {
      "country": "ES",
-     "value": 171,
+     "value": 178,
      "es": "resoluciones finales leídas, con sus condiciones",
      "fr": "décisions finales lues, avec leurs prescriptions"
     }
    ],
-   "updated": "2026-10-19T14:50:00+00:00",
+   "updated": "2026-10-20T12:52:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -177,7 +177,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-10-19T14:58:04+00:00",
+   "updated": "2026-10-20T12:57:18+00:00",
    "updated_from": "repo",
    "countries": [
     "ES"
@@ -199,7 +199,7 @@
      "fr": "zones humides espagnoles avec une mesure d'eau récente"
     }
    ],
-   "updated": "2026-10-19T13:32:00+00:00",
+   "updated": "2026-10-20T11:48:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -218,12 +218,12 @@
    "figures": [
     {
      "country": "ES",
-     "value": 7,
+     "value": 6,
      "es": "de 26 puntos de aforo, por debajo del mínimo según datos provisionales",
      "fr": "sur 26 stations, sous le minimum d'après des données provisoires"
     }
    ],
-   "updated": "2026-10-19T14:48:00+00:00",
+   "updated": "2026-10-20T12:51:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -239,7 +239,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-10-19T14:04:33+00:00",
+   "updated": "2026-10-20T12:16:55+00:00",
    "updated_from": "repo",
    "countries": [
     "FR"
