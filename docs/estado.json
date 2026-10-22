@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T11:04Z",
+ "generated": "2026-10-22T11:08Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -99,7 +99,7 @@
    "fr_url": "https://asensio94.github.io/estado-iba/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-10-22T11:03:35+00:00",
+   "updated": "2026-10-22T11:06:46+00:00",
    "updated_from": "repo",
    "countries": [
     "ES",
