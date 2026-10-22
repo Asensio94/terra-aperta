@@ -130,6 +130,28 @@ def fig_caudal(sig: list[dict]) -> list[Figure]:
                    f"stations sous le minimum aujourd'hui, sur {n(len(sig), 'fr')} qui l'ont été un jour des 30 derniers (données provisoires)")] if sig else []
 
 
+_MONTHS = {"es": ("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+                   "octubre", "noviembre", "diciembre"),
+           "fr": ("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre",
+                  "novembre", "décembre")}
+
+
+def fig_acuiferos(sig: list[dict]) -> list[Figure]:
+    # One signal per piezometer whose last complete month is «bajo» or «muy bajo» against the same month of
+    # the other years: the count is of those, for the latest month any of them reports.
+    if not sig:
+        return []
+    month = max((s.get("details") or {}).get("month", "") for s in sig)
+    cur = [s for s in sig if (s.get("details") or {}).get("month") == month]
+    very = sum(s.get("status") == "muy bajo" for s in cur)
+    y, m = month[:4], int(month[5:7])
+    es, fr = _MONTHS["es"][m - 1], _MONTHS["fr"][m - 1]
+    return [Figure("FR", len(cur), f"piezómetros con el nivel bajo o muy bajo en {es} de {y}, frente a los demás {es}s; "
+                                   f"{n(very, 'es')} de ellos, muy bajo",
+                   f"piézomètres au niveau bas ou très bas en {fr} {y} par rapport aux autres mois de {fr}, "
+                   f"dont {n(very, 'fr')} très bas")]
+
+
 def fig_depuracion(sig: list[dict]) -> list[Figure]:
     out = []
     for c, ss in _by_country(sig).items():
@@ -302,7 +324,7 @@ PROJECTS: list[Project] = [
              "fr": "Où en sont les nappes phréatiques françaises face aux restrictions d'eau ?"},
             {"es": "Nivel del agua en los pozos de control (piezómetros) de Hub'Eau frente a los decretos de sequía de VigiEau.",
              "fr": "Niveaux piézométriques de Hub'Eau face aux arrêtés sécheresse de VigiEau."},
-            ("FR",),
+            ("FR",), fig_acuiferos,
             pages=PAGES["acuiferos-francia"]),
     Project("depuracion-y-bano", {"es": "Depuración y baño", "fr": "Épuration et baignade"},
             {"es": "¿Qué ciudades no depuran sus aguas como pide la directiva europea, y qué zonas de baño quedan aguas abajo?",
