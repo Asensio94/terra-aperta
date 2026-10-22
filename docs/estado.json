@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T09:56Z",
+ "generated": "2026-10-22T10:40Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -46,7 +46,7 @@
      "fr": "incendies qui touchent Natura 2000, sur 176 avec foyers depuis le 12 octobre 2026"
     }
    ],
-   "updated": "2026-10-22T07:35:00+00:00",
+   "updated": "2026-10-22T10:08:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -64,7 +64,7 @@
    "status": "activo",
    "status_note": "",
    "fr_url": "https://asensio94.github.io/centinela-natura/fr/",
-   "signals": 443,
+   "signals": 435,
    "figures": [
     {
      "country": "ES",
@@ -79,7 +79,7 @@
      "fr": "changements confirmés à l'intérieur de sites Natura 2000 des Pyrénées-Atlantiques depuis le 30 septembre 2025"
     }
    ],
-   "updated": "2026-10-21T13:04:00+00:00",
+   "updated": "2026-10-22T10:22:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -99,7 +99,7 @@
    "fr_url": "https://asensio94.github.io/estado-iba/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-10-22T09:45:18+00:00",
+   "updated": "2026-10-22T10:40:19+00:00",
    "updated_from": "repo",
    "countries": [
     "ES",
@@ -128,7 +128,7 @@
      "fr": "pylônes et tronçons de ligne à risque élevé dans 55 sites Natura 2000"
     }
    ],
-   "updated": "2026-10-20T10:27:00+00:00",
+   "updated": "2026-10-22T10:11:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -161,7 +161,7 @@
      "fr": "décisions finales lues, avec leurs prescriptions"
     }
    ],
-   "updated": "2026-10-22T09:26:00+00:00",
+   "updated": "2026-10-22T10:09:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -177,7 +177,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-10-22T09:33:37+00:00",
+   "updated": "2026-10-22T10:09:29+00:00",
    "updated_from": "repo",
    "countries": [
     "ES"
@@ -199,7 +199,7 @@
      "fr": "zones humides espagnoles sur 6 avec une mesure d'eau récente"
     }
    ],
-   "updated": "2026-10-21T12:00:00+00:00",
+   "updated": "2026-10-22T10:09:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -218,12 +218,12 @@
    "figures": [
     {
      "country": "ES",
-     "value": 6,
+     "value": 9,
      "es": "puntos de aforo por debajo del mínimo hoy, de 24 que lo estuvieron algún día de los últimos 30 (datos provisionales)",
      "fr": "stations sous le minimum aujourd'hui, sur 24 qui l'ont été un jour des 30 derniers (données provisoires)"
     }
    ],
-   "updated": "2026-10-21T13:03:00+00:00",
+   "updated": "2026-10-22T10:19:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -236,10 +236,10 @@
    "errors": [],
    "status": "activo",
    "status_note": "",
-   "fr_url": null,
+   "fr_url": "https://asensio94.github.io/acuiferos-francia/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-10-22T09:41:11+00:00",
+   "updated": "2026-10-22T10:39:41+00:00",
    "updated_from": "repo",
    "countries": [
     "FR"
@@ -279,7 +279,7 @@
      "fr": "zones de baignade de qualité insuffisante la dernière saison"
     }
    ],
-   "updated": "2026-10-16T08:55:00+00:00",
+   "updated": "2026-10-22T10:25:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -306,7 +306,7 @@
      "fr": "bâtiments datés de 2017 ou après dans des zones inondables, dans 163 communes de la Communauté valencienne"
     }
    ],
-   "updated": "2026-10-13T19:24:00+00:00",
+   "updated": "2026-10-22T10:20:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
