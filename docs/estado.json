@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-21T13:12Z",
+ "generated": "2026-10-22T09:56Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -12,8 +12,8 @@
     {
      "country": null,
      "value": 12,
-     "es": "de 19 ciudades con previsión de migración alta o muy alta esta noche",
-     "fr": "villes sur 19 avec une migration forte ou très forte prévue cette nuit"
+     "es": "de 19 ciudades españolas con previsión de migración alta o muy alta esta noche",
+     "fr": "villes espagnoles sur 19 avec une migration forte ou très forte prévue cette nuit"
     }
    ],
    "updated": "2026-10-21T10:53:00+00:00",
@@ -31,22 +31,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": "https://asensio94.github.io/vigia-incendios/fr/",
-   "signals": 682,
+   "signals": 733,
    "figures": [
     {
      "country": "ES",
-     "value": 75,
-     "es": "incendios que tocan la Red Natura 2000, de 516 con focos desde el 29 de septiembre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 516 avec foyers depuis le 29 septembre 2026"
+     "value": 80,
+     "es": "incendios que tocan la Red Natura 2000, de 557 con focos desde el 29 de septiembre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 557 avec foyers depuis le 29 septembre 2026"
     },
     {
      "country": "FR",
-     "value": 23,
-     "es": "incendios que tocan la Red Natura 2000, de 166 con focos desde el 12 de octubre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 166 avec foyers depuis le 12 octobre 2026"
+     "value": 24,
+     "es": "incendios que tocan la Red Natura 2000, de 176 con focos desde el 12 de octubre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 176 avec foyers depuis le 12 octobre 2026"
     }
    ],
-   "updated": "2026-10-21T07:39:00+00:00",
+   "updated": "2026-10-22T07:35:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -69,14 +69,14 @@
     {
      "country": "ES",
      "value": 72,
-     "es": "cambios confirmados dentro de espacios Natura 2000 desde el 30 de septiembre de 2025",
-     "fr": "changements confirmés à l'intérieur de sites Natura 2000 depuis le 30 septembre 2025"
+     "es": "cambios confirmados dentro de espacios Natura 2000 de Cantabria desde el 30 de septiembre de 2025",
+     "fr": "changements confirmés à l'intérieur de sites Natura 2000 de Cantabrie depuis le 30 septembre 2025"
     },
     {
      "country": "FR",
      "value": 98,
-     "es": "cambios confirmados dentro de espacios Natura 2000 desde el 30 de septiembre de 2025",
-     "fr": "changements confirmés à l'intérieur de sites Natura 2000 depuis le 30 septembre 2025"
+     "es": "cambios confirmados dentro de espacios Natura 2000 de los Pirineos Atlánticos desde el 30 de septiembre de 2025",
+     "fr": "changements confirmés à l'intérieur de sites Natura 2000 des Pyrénées-Atlantiques depuis le 30 septembre 2025"
     }
    ],
    "updated": "2026-10-21T13:04:00+00:00",
@@ -99,7 +99,7 @@
    "fr_url": "https://asensio94.github.io/estado-iba/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-10-20T13:34:45+00:00",
+   "updated": "2026-10-22T09:45:18+00:00",
    "updated_from": "repo",
    "countries": [
     "ES",
@@ -116,16 +116,16 @@
    "signals": 87,
    "figures": [
     {
-     "country": "FR",
-     "value": 4133,
-     "es": "apoyos y tramos de línea de riesgo alto dentro de 55 espacios Natura 2000",
-     "fr": "pylônes et tronçons de ligne à risque élevé dans 55 sites Natura 2000"
-    },
-    {
      "country": "ES",
      "value": 1327,
      "es": "apoyos y tramos de línea de riesgo alto dentro de 32 espacios Natura 2000",
      "fr": "pylônes et tronçons de ligne à risque élevé dans 32 sites Natura 2000"
+    },
+    {
+     "country": "FR",
+     "value": 4133,
+     "es": "apoyos y tramos de línea de riesgo alto dentro de 55 espacios Natura 2000",
+     "fr": "pylônes et tronçons de ligne à risque élevé dans 55 sites Natura 2000"
     }
    ],
    "updated": "2026-10-20T10:27:00+00:00",
@@ -146,22 +146,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": null,
-   "signals": 348,
+   "signals": 361,
    "figures": [
     {
      "country": "ES",
-     "value": 167,
-     "es": "anuncios del BOE con trámite ambiental desde el 27 de julio de 2026",
-     "fr": "avis du Journal officiel espagnol (BOE) avec procédure environnementale depuis le 27 juillet 2026"
+     "value": 171,
+     "es": "anuncios del BOE y del Boletín de Cantabria con trámite ambiental desde el 27 de julio de 2026",
+     "fr": "avis du Journal officiel espagnol (BOE) et du Bulletin de Cantabrie avec procédure environnementale depuis le 27 juillet 2026"
     },
     {
      "country": "ES",
-     "value": 181,
+     "value": 190,
      "es": "resoluciones finales leídas, con sus condiciones",
      "fr": "décisions finales lues, avec leurs prescriptions"
     }
    ],
-   "updated": "2026-10-21T13:05:00+00:00",
+   "updated": "2026-10-22T09:26:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -177,7 +177,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-10-21T13:12:12+00:00",
+   "updated": "2026-10-22T09:33:37+00:00",
    "updated_from": "repo",
    "countries": [
     "ES"
@@ -195,8 +195,8 @@
     {
      "country": "ES",
      "value": 5,
-     "es": "humedales españoles con lectura de agua reciente",
-     "fr": "zones humides espagnoles avec une mesure d'eau récente"
+     "es": "de 6 humedales españoles con lectura de agua reciente",
+     "fr": "zones humides espagnoles sur 6 avec une mesure d'eau récente"
     }
    ],
    "updated": "2026-10-21T12:00:00+00:00",
@@ -219,8 +219,8 @@
     {
      "country": "ES",
      "value": 6,
-     "es": "de 24 puntos de aforo, por debajo del mínimo según datos provisionales",
-     "fr": "sur 24 stations, sous le minimum d'après des données provisoires"
+     "es": "puntos de aforo por debajo del mínimo hoy, de 24 que lo estuvieron algún día de los últimos 30 (datos provisionales)",
+     "fr": "stations sous le minimum aujourd'hui, sur 24 qui l'ont été un jour des 30 derniers (données provisoires)"
     }
    ],
    "updated": "2026-10-21T13:03:00+00:00",
@@ -239,7 +239,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-10-21T12:31:46+00:00",
+   "updated": "2026-10-22T09:41:11+00:00",
    "updated_from": "repo",
    "countries": [
     "FR"
@@ -302,8 +302,8 @@
     {
      "country": "ES",
      "value": 2764,
-     "es": "edificios fechados en 2017 o después dentro de zonas inundables",
-     "fr": "bâtiments datés de 2017 ou après dans des zones inondables"
+     "es": "edificios fechados en 2017 o después dentro de zonas inundables, en 163 municipios de la Comunitat Valenciana",
+     "fr": "bâtiments datés de 2017 ou après dans des zones inondables, dans 163 communes de la Communauté valencienne"
     }
    ],
    "updated": "2026-10-13T19:24:00+00:00",
