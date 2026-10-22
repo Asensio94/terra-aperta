@@ -71,7 +71,8 @@ def _by_country(signals: list[dict]) -> dict[str | None, list[dict]]:
     out: dict[str | None, list[dict]] = {}
     for s in signals:
         out.setdefault(s.get("country"), []).append(s)
-    return out
+    order = {"ES": 0, "FR": 1}
+    return dict(sorted(out.items(), key=lambda kv: order.get(kv[0], 2)))
 
 
 def fig_observatorio(sig: list[dict]) -> list[Figure]:
@@ -81,8 +82,8 @@ def fig_observatorio(sig: list[dict]) -> list[Figure]:
     if notices:
         es, fr = _since(notices)
         out.append(Figure("ES", len(notices),
-                          f"anuncios del BOE con trámite ambiental desde el {es}",
-                          f"avis du Journal officiel espagnol (BOE) avec procédure environnementale depuis le {fr}"))
+                          f"anuncios del BOE y del Boletín de Cantabria con trámite ambiental desde el {es}",
+                          f"avis du Journal officiel espagnol (BOE) et du Bulletin de Cantabrie avec procédure environnementale depuis le {fr}"))
     if res:
         out.append(Figure("ES", len(res), "resoluciones finales leídas, con sus condiciones",
                           "décisions finales lues, avec leurs prescriptions"))
@@ -102,27 +103,31 @@ def fig_vigia(sig: list[dict]) -> list[Figure]:
     return out
 
 
+_PILOT = {"ES": (" de Cantabria", " de Cantabrie"), "FR": (" de los Pirineos Atlánticos", " des Pyrénées-Atlantiques")}
+
+
 def fig_centinela(sig: list[dict]) -> list[Figure]:
     out = []
     for c, ss in _by_country(sig).items():
         ok = [s for s in ss if s.get("status") == "confirmada"]
         if ss:
             es, fr = _since(ss)
-            out.append(Figure(c, len(ok), f"cambios confirmados dentro de espacios Natura 2000 desde el {es}",
-                              f"changements confirmés à l'intérieur de sites Natura 2000 depuis le {fr}"))
+            area_es, area_fr = _PILOT.get(c, ("", ""))
+            out.append(Figure(c, len(ok), f"cambios confirmados dentro de espacios Natura 2000{area_es} desde el {es}",
+                              f"changements confirmés à l'intérieur de sites Natura 2000{area_fr} depuis le {fr}"))
     return out
 
 
 def fig_humedales(sig: list[dict]) -> list[Figure]:
     cur = [s for s in sig if s.get("status") == "vigente"]
-    return [Figure("ES", len(cur), "humedales españoles con lectura de agua reciente",
-                   "zones humides espagnoles avec une mesure d'eau récente")] if sig else []
+    return [Figure("ES", len(cur), f"de {n(len(sig), 'es')} humedales españoles con lectura de agua reciente",
+                   f"zones humides espagnoles sur {n(len(sig), 'fr')} avec une mesure d'eau récente")] if sig else []
 
 
 def fig_caudal(sig: list[dict]) -> list[Figure]:
     below = sum(bool((s.get("details") or {}).get("below_now")) for s in sig)
-    return [Figure("ES", below, f"de {n(len(sig), 'es')} puntos de aforo, por debajo del mínimo según datos provisionales",
-                   f"sur {n(len(sig), 'fr')} stations, sous le minimum d'après des données provisoires")] if sig else []
+    return [Figure("ES", below, f"puntos de aforo por debajo del mínimo hoy, de {n(len(sig), 'es')} que lo estuvieron algún día de los últimos 30 (datos provisionales)",
+                   f"stations sous le minimum aujourd'hui, sur {n(len(sig), 'fr')} qui l'ont été un jour des 30 derniers (données provisoires)")] if sig else []
 
 
 def fig_depuracion(sig: list[dict]) -> list[Figure]:
@@ -143,8 +148,8 @@ def fig_depuracion(sig: list[dict]) -> list[Figure]:
 
 def fig_zona(sig: list[dict]) -> list[Figure]:
     total = sum((s.get("value") or {}).get("amount") or 0 for s in sig)
-    return [Figure("ES", total, "edificios fechados en 2017 o después dentro de zonas inundables",
-                   "bâtiments datés de 2017 ou après dans des zones inondables")] if sig else []
+    return [Figure("ES", total, f"edificios fechados en 2017 o después dentro de zonas inundables, en {n(len(sig), 'es')} municipios de la Comunitat Valenciana",
+                   f"bâtiments datés de 2017 ou après dans des zones inondables, dans {n(len(sig), 'fr')} communes de la Communauté valencienne")] if sig else []
 
 
 def fig_tendidos(sig: list[dict]) -> list[Figure]:
@@ -158,8 +163,8 @@ def fig_tendidos(sig: list[dict]) -> list[Figure]:
 
 def fig_subnocte(sig: list[dict]) -> list[Figure]:
     hi = sum(s.get("status") in ("high", "very high") for s in sig)
-    return [Figure(None, hi, f"de {n(len(sig), 'es')} ciudades con previsión de migración alta o muy alta esta noche",
-                   f"villes sur {n(len(sig), 'fr')} avec une migration forte ou très forte prévue cette nuit")] if sig else []
+    return [Figure(None, hi, f"de {n(len(sig), 'es')} ciudades españolas con previsión de migración alta o muy alta esta noche",
+                   f"villes espagnoles sur {n(len(sig), 'fr')} avec une migration forte ou très forte prévue cette nuit")] if sig else []
 
 
 
@@ -187,8 +192,8 @@ PAGES: dict[str, tuple[Page, ...]] = {
         Page("Francia", "France", "fr/", "fr"),
     ),
     "riesgo-tendidos-aves": (
-        Page("Mapa", "Carte", "regions.es.html", only="es"),
-        Page("Mapa", "Carte", "regions.fr.html", "fr", only="fr"),
+        Page("Por regiones", "Par région", "regions.es.html", only="es"),
+        Page("Por regiones", "Par région", "regions.fr.html", "fr", only="fr"),
         Page("El proyecto", "Le projet", "index.html", only="es"),
         Page("El proyecto", "Le projet", "index.fr.html", "fr", only="fr"),
     ),
@@ -229,8 +234,8 @@ PROJECTS: list[Project] = [
     Project("sub-nocte", {"es": "Sub Nocte", "fr": "Sub Nocte"},
             {"es": "¿Cuántas aves migrarán esta noche sobre cada ciudad, y cuándo conviene apagar las luces?",
              "fr": "Combien d'oiseaux migreront cette nuit au-dessus de chaque ville, et quand faut-il éteindre les lumières ?"},
-            {"es": "Previsión a partir de los perfiles abiertos de los radares meteorológicos europeos (Aloft) y de la meteorología.",
-             "fr": "Prévision à partir des profils ouverts des radars météorologiques européens (Aloft) et de la météo."},
+            {"es": "Previsión a partir de los perfiles abiertos de los radares meteorológicos europeos (Aloft) y de la meteorología. Ciudades de España, Francia y Portugal.",
+             "fr": "Prévision à partir des profils ouverts des radars météorologiques européens (Aloft) et de la météo. Villes d'Espagne, de France et du Portugal."},
             ("ES", "FR"), fig_subnocte,
             pages=PAGES["sub-nocte"]),
     Project("vigia-incendios", {"es": "Vigía de incendios", "fr": "Vigie des incendies"},
@@ -241,17 +246,17 @@ PROJECTS: list[Project] = [
             ("ES", "FR"), fig_vigia,
             pages=PAGES["vigia-incendios"]),
     Project("centinela-natura", {"es": "Centinela Natura", "fr": "Centinela Natura"},
-            {"es": "¿Qué cambia físicamente dentro de los espacios Natura 2000: desbroces, movimientos de tierra, construcciones?",
-             "fr": "Qu'est-ce qui change physiquement dans les sites Natura 2000 : défrichements, terrassements, constructions ?"},
-            {"es": "Compara imágenes Sentinel-2 cada pocos días con reglas espectrales fijas y señala la parcela catastral afectada. Piloto en Cantabria y en los Pirineos Atlánticos.",
-             "fr": "Compare des images Sentinel-2 tous les quelques jours avec des règles spectrales fixes et indique la parcelle cadastrale concernée. Pilotes : Cantabrie et Pyrénées-Atlantiques."},
+            {"es": "¿Qué cambia físicamente dentro de los espacios Natura 2000: desbroces, movimientos de tierra, explanaciones?",
+             "fr": "Qu'est-ce qui change physiquement dans les sites Natura 2000 : défrichements, terrassements, aplanissements ?"},
+            {"es": "Compara imágenes Sentinel-2 cada pocos días con reglas espectrales fijas y señala la parcela catastral afectada. Piloto en Cantabria y en los Pirineos Atlánticos. Un cambio menor que unos píxeles, como una casa aislada, no se ve.",
+             "fr": "Compare des images Sentinel-2 tous les quelques jours avec des règles spectrales fixes et indique la parcelle cadastrale concernée. Pilotes : Cantabrie et Pyrénées-Atlantiques. Un changement plus petit que quelques pixels, comme une maison isolée, n'est pas vu."},
             ("ES", "FR"), fig_centinela,
             pages=PAGES["centinela-natura"]),
     Project("estado-iba", {"es": "Estado de las IBA", "fr": "État des IBA"},
             {"es": "¿Qué saben todos estos proyectos de cada espacio importante para las aves y de cada municipio?",
              "fr": "Que savent tous ces projets de chaque site important pour les oiseaux et de chaque commune ?"},
-            {"es": "Reúne en una ficha por espacio y por municipio lo que publican los demás proyectos: proyectos, fuego, suelo, agua, ríos y tendidos. Sin índices.",
-             "fr": "Réunit dans une fiche par site et par commune ce que publient les autres projets : projets, feu, sol, eau, rivières et lignes. Sans indice."},
+            {"es": "Reúne en una ficha por espacio y por municipio lo que publican los demás proyectos: proyectos, fuego, suelo, agua, ríos y tendidos. Sin índices. De momento trabaja sobre las ZEPA, la figura legal que protege esas áreas.",
+             "fr": "Réunit dans une fiche par site et par commune ce que publient les autres projets : projets, feu, sol, eau, rivières et lignes. Sans indice. Pour l'instant, il travaille sur les ZPS, le statut légal qui protège ces zones."},
             ("ES", "FR"),
             pages=PAGES["estado-iba"]),
     Project("riesgo-tendidos-aves", {"es": "Riesgo de tendidos para aves", "fr": "Risque des lignes pour les oiseaux"},
@@ -264,43 +269,43 @@ PROJECTS: list[Project] = [
     Project("observatorio-alegaciones", {"es": "Observatorio de alegaciones", "fr": "Observatoire des consultations"},
             {"es": "¿Qué proyectos con impacto ambiental salen a información pública, cerca de qué espacios protegidos, y qué se les exigió al aprobarlos?",
              "fr": "Quels projets à impact environnemental sont soumis à consultation, près de quels sites protégés, et que leur a-t-on imposé en les autorisant ?"},
-            {"es": "Lee cada mañana el BOE, cruza cada proyecto con la Red Natura 2000 y las especies amenazadas, y guarda la resolución final con sus condiciones, para poder alegar a tiempo.",
-             "fr": "Lit chaque matin le Journal officiel espagnol (BOE), croise chaque projet avec Natura 2000 et les espèces menacées, et garde la décision finale avec ses prescriptions, pour pouvoir réagir à temps."},
+            {"es": "Lee cada mañana el BOE y el Boletín de Cantabria, cruza cada proyecto con la Red Natura 2000 y las especies amenazadas, y guarda la resolución final con sus condiciones, para poder alegar a tiempo.",
+             "fr": "Lit chaque matin le Journal officiel espagnol (BOE) et le Bulletin de Cantabrie, croise chaque projet avec Natura 2000 et les espèces menacées, et garde la décision finale avec ses prescriptions, pour pouvoir réagir à temps."},
             ("ES",), fig_observatorio,
             pages=PAGES["observatorio-alegaciones"]),
     Project("grafo-promotores", {"es": "Grafo de promotores", "fr": "Graphe des porteurs de projet"},
-            {"es": "¿Qué empresas y grupos están detrás de los proyectos que se tramitan?",
-             "fr": "Quelles entreprises et quels groupes sont derrière les projets en cours d'autorisation ?"},
-            {"es": "Une cada promotor de los proyectos del observatorio con su grupo empresarial a partir de registros mercantiles públicos. Las personas físicas no aparecen.",
-             "fr": "Relie chaque porteur de projet de l'observatoire à son groupe à partir des registres publics des sociétés. Les personnes physiques n'y figurent pas."},
+            {"es": "¿Qué grupos empresariales están detrás de los proyectos energéticos, y cuáles parecen trocear uno grande en varios pequeños?",
+             "fr": "Quels groupes sont derrière les projets énergétiques, et lesquels semblent découper un grand projet en plusieurs petits ?"},
+            {"es": "Une los titulares de las instalaciones energéticas del BOE por el Registro Mercantil (BORME) y señala los conjuntos de un mismo grupo que se quedan por debajo de 50 MW, el umbral a partir del cual autoriza el Estado y no la comunidad autónoma. Indicios, no pruebas. Las personas físicas no aparecen.",
+             "fr": "Relie les titulaires des installations énergétiques du BOE par le registre du commerce espagnol (BORME) et signale les ensembles d'un même groupe qui restent sous 50 MW, le seuil à partir duquel c'est l'État, et non la région, qui autorise. Des indices, pas des preuves. Les personnes physiques n'y figurent pas."},
             ("ES",),
             pages=PAGES["grafo-promotores"]),
     Project("vigilancia-humedales", {"es": "Vigilancia de humedales", "fr": "Veille des zones humides"},
             {"es": "¿Cuánta agua tienen los grandes humedales protegidos, y está turbia o eutrofizada?",
              "fr": "Combien d'eau ont les grandes zones humides protégées, et est-elle trouble ou eutrophisée ?"},
-            {"es": "Superficie de agua, turbidez y clorofila con Sentinel-2 cada pocos días, frente a la serie de cada humedal desde 2017. Doce humedales: seis en España y seis en Francia.",
-             "fr": "Surface en eau, turbidité et chlorophylle avec Sentinel-2 tous les quelques jours, face à la série de chaque zone humide depuis 2017. Douze sites : six en Espagne et six en France."},
+            {"es": "Superficie de agua, turbidez y clorofila (índices NDTI y NDCI) con Sentinel-2 cada pocos días, frente a la serie de cada humedal desde 2017. Doce humedales: seis en España y seis en Francia.",
+             "fr": "Surface en eau, turbidité et chlorophylle (indices NDTI et NDCI) avec Sentinel-2 tous les quelques jours, face à la série de chaque zone humide depuis 2017. Douze sites : six en Espagne et six en France."},
             ("ES", "FR"), fig_humedales,
             pages=PAGES["vigilancia-humedales"]),
     Project("caudal-ecologico", {"es": "Caudal ecológico", "fr": "Débit écologique"},
             {"es": "¿Llevan los ríos el agua mínima que fija el plan hidrológico?",
              "fr": "Les rivières ont-elles le débit minimal fixé par le plan de bassin ?"},
-            {"es": "Caudal diario de las estaciones de aforo frente al caudal ecológico de cada tramo. Los datos de aforo son provisionales, así que dice «por debajo del mínimo», nunca «incumple».",
-             "fr": "Débit journalier des stations hydrométriques face au débit écologique de chaque tronçon. Les données sont provisoires : on écrit « sous le minimum », jamais « en infraction »."},
+            {"es": "Caudal diario de las estaciones de aforo frente al caudal ecológico de cada tramo. Ríos de cuatro cuencas. Los datos de aforo son provisionales, así que dice «por debajo del mínimo», nunca «incumple».",
+             "fr": "Débit journalier des stations hydrométriques face au débit écologique de chaque tronçon. Rivières de quatre bassins. Les données sont provisoires : on écrit « sous le minimum », jamais « en infraction »."},
             ("ES",), fig_caudal,
             pages=PAGES["caudal-ecologico"]),
     Project("acuiferos-francia", {"es": "Acuíferos de Francia", "fr": "Nappes de France"},
             {"es": "¿Cómo están los acuíferos franceses frente a las restricciones de agua por sequía?",
              "fr": "Où en sont les nappes phréatiques françaises face aux restrictions d'eau ?"},
-            {"es": "Niveles piezométricos de Hub'Eau frente a los decretos de sequía de VigiEau.",
+            {"es": "Nivel del agua en los pozos de control (piezómetros) de Hub'Eau frente a los decretos de sequía de VigiEau.",
              "fr": "Niveaux piézométriques de Hub'Eau face aux arrêtés sécheresse de VigiEau."},
             ("FR",),
             pages=PAGES["acuiferos-francia"]),
     Project("depuracion-y-bano", {"es": "Depuración y baño", "fr": "Épuration et baignade"},
             {"es": "¿Qué ciudades no depuran sus aguas como pide la directiva europea, y qué zonas de baño quedan aguas abajo?",
              "fr": "Quelles villes n'épurent pas leurs eaux comme l'exige la directive européenne, et quelles baignades se trouvent en aval ?"},
-            {"es": "Informes de cada país a la Agencia Europea de Medio Ambiente sobre la directiva de aguas residuales (91/271), con la clasificación oficial de las zonas de baño.",
-             "fr": "Rapports de chaque pays à l'Agence européenne pour l'environnement sur la directive eaux résiduaires urbaines (91/271), avec le classement officiel des baignades."},
+            {"es": "Informes de cada país a la Agencia Europea de Medio Ambiente sobre la directiva de aguas residuales (91/271), con la clasificación oficial de las zonas de baño. En España, los indicios salen de reglas propias sobre esos informes; en Francia se da el veredicto oficial del Estado.",
+             "fr": "Rapports de chaque pays à l'Agence européenne pour l'environnement sur la directive eaux résiduaires urbaines (91/271), avec le classement officiel des baignades. En Espagne, les indices viennent de règles propres appliquées à ces rapports ; en France, c'est le verdict officiel de l'État."},
             ("ES", "FR"), fig_depuracion, max_age_days=40,
             pages=PAGES["depuracion-y-bano"]),
     Project("zona-inundable", {"es": "Construir en zona inundable", "fr": "Construire en zone inondable"},

@@ -75,8 +75,8 @@ T = {
             "Con esas señales calcula la cifra de cada ficha, siempre con una regla escrita en el mismo fichero: por "
             "ejemplo, para el vigía de incendios, cuántos de los incendios publicados tocan algún espacio Natura 2000.",
             "Si un proyecto no publica señales, solo se muestra la fecha de la última actividad de su repositorio.",
-            "Si un proyecto lleva más días de lo normal sin actualizarse (3 para los diarios, 40 para los mensuales), la "
-            "ficha lo dice. Si una fuente falla, también.",
+            "Si un proyecto lleva más días de lo normal sin actualizarse (3 para los diarios, 40 para los mensuales, 400 para los "
+            "anuales), la ficha lo dice. Si una fuente falla, también.",
             "Lo leído se guarda tal cual en <a href=\"estado.json\">estado.json</a>, para que cualquiera pueda "
             "comprobar las cifras.",
         ],
@@ -90,12 +90,16 @@ T = {
              "encontrado (un incendio, un cambio de suelo, un río bajo mínimos), con fecha, lugar y enlace. Así los "
              "proyectos se leen entre sí. Las reglas están en el contrato de "
              "<a href=\"https://github.com/Asensio94/estado-iba/blob/main/CONTRATO.md\">estado-iba</a>."),
+            ("Aloft / vol2bird", "Aloft es el archivo abierto de perfiles de aves de los radares meteorológicos "
+             "europeos (red OPERA); vol2bird es el programa que separa en cada radar los ecos de aves de los de la lluvia."),
+            ("ZEPA", "Zona de Especial Protección para las Aves: la figura legal de la Red Natura 2000 que protege a las "
+             "aves. Suele coincidir con las IBA, pero no siempre."),
             ("Sentinel-2", "Satélites europeos del programa Copernicus que fotografían cada punto cada pocos días "
              "con píxeles de 10 a 20 m."),
             ("VIIRS / FIRMS", "Sensor de satélite que detecta puntos calientes, y el servicio de la NASA que los "
              "publica unas horas después de cada pasada."),
-            ("BOE", "Boletín Oficial del Estado, donde se publican en España los proyectos sometidos a evaluación "
-             "ambiental y sus resoluciones."),
+            ("BOE / BOC", "Boletín Oficial del Estado, donde se publican en España los proyectos sometidos a evaluación "
+             "ambiental y sus resoluciones; y Boletín Oficial de Cantabria, que el observatorio también lee."),
             ("INE / INSEE", "Los institutos de estadística. Sus códigos identifican cada municipio (España) o "
              "commune (Francia)."),
         ],
@@ -163,7 +167,7 @@ T = {
             "Natura 2000.",
             "Si un projet ne publie pas de signaux, seule la date de la dernière activité de son dépôt est affichée.",
             "Si un projet reste plus de jours que d'habitude sans mise à jour (3 pour les quotidiens, 40 pour les "
-            "mensuels), la fiche l'indique. Si une source est en panne, aussi.",
+            "mensuels, 400 pour les annuels), la fiche l'indique. Si une source est en panne, aussi.",
             "Ce qui a été lu est gardé tel quel dans <a href=\"../estado.json\">estado.json</a>, pour que chacun "
             "puisse vérifier les chiffres.",
         ],
@@ -178,6 +182,10 @@ T = {
              "incendie, un changement d'usage du sol, une rivière sous le minimum), avec date, lieu et lien. Les "
              "projets se lisent ainsi entre eux. Les règles sont dans le contrat d'"
              "<a href=\"https://github.com/Asensio94/estado-iba/blob/main/CONTRATO.md\">estado-iba</a> (en espagnol)."),
+            ("Aloft / vol2bird", "Aloft est l'archive ouverte des profils d'oiseaux des radars météorologiques "
+             "européens (réseau OPERA) ; vol2bird est le programme qui sépare, pour chaque radar, les échos d'oiseaux de ceux de la pluie."),
+            ("ZPS", "Zone de protection spéciale : le statut Natura 2000 qui protège les oiseaux. Elle coïncide souvent "
+             "avec les IBA, mais pas toujours."),
             ("Sentinel-2", "Satellites européens du programme Copernicus qui photographient chaque point tous les "
              "quelques jours, avec des pixels de 10 à 20 m."),
             ("VIIRS / FIRMS", "Capteur satellite qui détecte les points chauds, et le service de la NASA qui les "
