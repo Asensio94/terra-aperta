@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T10:40Z",
+ "generated": "2026-10-22T11:04Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -11,12 +11,12 @@
    "figures": [
     {
      "country": null,
-     "value": 12,
+     "value": 3,
      "es": "de 19 ciudades españolas con previsión de migración alta o muy alta esta noche",
      "fr": "villes espagnoles sur 19 avec une migration forte ou très forte prévue cette nuit"
     }
    ],
-   "updated": "2026-10-21T10:53:00+00:00",
+   "updated": "2026-10-22T10:48:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -99,7 +99,7 @@
    "fr_url": "https://asensio94.github.io/estado-iba/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-10-22T10:40:19+00:00",
+   "updated": "2026-10-22T11:03:35+00:00",
    "updated_from": "repo",
    "countries": [
     "ES",
@@ -128,7 +128,7 @@
      "fr": "pylônes et tronçons de ligne à risque élevé dans 55 sites Natura 2000"
     }
    ],
-   "updated": "2026-10-22T10:11:00+00:00",
+   "updated": "2026-10-22T10:44:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -237,10 +237,20 @@
    "status": "activo",
    "status_note": "",
    "fr_url": "https://asensio94.github.io/acuiferos-francia/fr/",
-   "signals": null,
-   "figures": [],
-   "updated": "2026-10-22T10:39:41+00:00",
-   "updated_from": "repo",
+   "signals": 788,
+   "figures": [
+    {
+     "country": "FR",
+     "value": 788,
+     "es": "piezómetros con el nivel bajo o muy bajo en septiembre de 2026, frente a los demás septiembres; 488 de ellos, muy bajo",
+     "fr": "piézomètres au niveau bas ou très bas en septembre 2026 par rapport aux autres mois de septembre, dont 488 très bas"
+    }
+   ],
+   "updated": "2026-10-22T11:00:00+00:00",
+   "updated_from": "signals",
+   "countries_v2": [
+    "FR"
+   ],
    "countries": [
     "FR"
    ],
@@ -279,7 +289,7 @@
      "fr": "zones de baignade de qualité insuffisante la dernière saison"
     }
    ],
-   "updated": "2026-10-22T10:25:00+00:00",
+   "updated": "2026-10-22T10:41:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -306,7 +316,7 @@
      "fr": "bâtiments datés de 2017 ou après dans des zones inondables, dans 163 communes de la Communauté valencienne"
     }
    ],
-   "updated": "2026-10-22T10:20:00+00:00",
+   "updated": "2026-10-22T10:42:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
