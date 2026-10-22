@@ -210,7 +210,10 @@ PAGES: dict[str, tuple[Page, ...]] = {
         Page("Francia", "France", "france.html", "fr"),
     ),
     "caudal-ecologico": (Page("Caudal ecológico", "Débit écologique", ""),),
-    "acuiferos-francia": (Page("Acuíferos de Francia", "Nappes de France", ""),),
+    "acuiferos-francia": (
+        Page("Acuíferos de Francia", "Nappes de France", "", only="es"),
+        Page("Acuíferos de Francia", "Nappes de France", "fr/", "fr", only="fr"),
+    ),
     "depuracion-y-bano": (
         Page("España", "Espagne", ""),
         Page("Francia", "France", "fr/", "fr"),
