@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-29T14:38Z",
+ "generated": "2026-10-30T14:30Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -11,12 +11,12 @@
    "figures": [
     {
      "country": null,
-     "value": 6,
+     "value": 9,
      "es": "de 19 ciudades españolas con previsión de migración alta o muy alta esta noche",
      "fr": "villes espagnoles sur 19 avec une migration forte ou très forte prévue cette nuit"
     }
    ],
-   "updated": "2026-10-29T12:28:00+00:00",
+   "updated": "2026-10-30T12:08:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -31,22 +31,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": "https://asensio94.github.io/vigia-incendios/fr/",
-   "signals": 1156,
+   "signals": 1212,
    "figures": [
     {
      "country": "ES",
-     "value": 129,
-     "es": "incendios que tocan la Red Natura 2000, de 931 con focos desde el 29 de septiembre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 931 avec foyers depuis le 29 septembre 2026"
+     "value": 132,
+     "es": "incendios que tocan la Red Natura 2000, de 976 con focos desde el 29 de septiembre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 976 avec foyers depuis le 29 septembre 2026"
     },
     {
      "country": "FR",
-     "value": 24,
-     "es": "incendios que tocan la Red Natura 2000, de 225 con focos desde el 12 de octubre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 225 avec foyers depuis le 12 octobre 2026"
+     "value": 27,
+     "es": "incendios que tocan la Red Natura 2000, de 236 con focos desde el 12 de octubre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 236 avec foyers depuis le 12 octobre 2026"
     }
    ],
-   "updated": "2026-10-29T14:18:00+00:00",
+   "updated": "2026-10-30T14:08:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -99,7 +99,7 @@
    "fr_url": "https://asensio94.github.io/estado-iba/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-10-28T15:07:39+00:00",
+   "updated": "2026-10-29T15:14:54+00:00",
    "updated_from": "repo",
    "countries": [
     "ES",
@@ -146,22 +146,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": null,
-   "signals": 388,
+   "signals": 396,
    "figures": [
     {
      "country": "ES",
-     "value": 190,
+     "value": 197,
      "es": "anuncios del BOE y del Boletín de Cantabria con trámite ambiental desde el 27 de julio de 2026",
      "fr": "avis du Journal officiel espagnol (BOE) et du Bulletin de Cantabrie avec procédure environnementale depuis le 27 juillet 2026"
     },
     {
      "country": "ES",
-     "value": 198,
+     "value": 199,
      "es": "resoluciones finales leídas, con sus condiciones",
      "fr": "décisions finales lues, avec leurs prescriptions"
     }
    ],
-   "updated": "2026-10-29T14:35:00+00:00",
+   "updated": "2026-10-30T14:27:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -177,7 +177,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-10-28T14:28:12+00:00",
+   "updated": "2026-10-30T14:30:15+00:00",
    "updated_from": "repo",
    "countries": [
     "ES"
@@ -199,7 +199,7 @@
      "fr": "zones humides espagnoles sur 6 avec une mesure d'eau récente"
     }
    ],
-   "updated": "2026-10-29T13:15:00+00:00",
+   "updated": "2026-10-30T13:07:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -218,12 +218,12 @@
    "figures": [
     {
      "country": "ES",
-     "value": 14,
+     "value": 12,
      "es": "puntos de aforo por debajo del mínimo hoy, de 23 que lo estuvieron algún día de los últimos 30 (datos provisionales)",
      "fr": "stations sous le minimum aujourd'hui, sur 23 qui l'ont été un jour des 30 derniers (données provisoires)"
     }
    ],
-   "updated": "2026-10-29T14:21:00+00:00",
+   "updated": "2026-10-30T14:14:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -246,7 +246,7 @@
      "fr": "piézomètres au niveau bas ou très bas en septembre 2026 par rapport aux autres mois de septembre, dont 488 très bas"
     }
    ],
-   "updated": "2026-10-29T13:54:00+00:00",
+   "updated": "2026-10-30T13:40:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "FR"
