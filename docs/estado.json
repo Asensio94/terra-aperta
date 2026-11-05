@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-04T15:44Z",
+ "generated": "2026-11-05T15:48Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -11,12 +11,12 @@
    "figures": [
     {
      "country": null,
-     "value": 4,
+     "value": 7,
      "es": "de 19 ciudades españolas con previsión de migración alta o muy alta esta noche",
      "fr": "villes espagnoles sur 19 avec une migration forte ou très forte prévue cette nuit"
     }
    ],
-   "updated": "2026-11-04T13:26:00+00:00",
+   "updated": "2026-11-05T13:46:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -31,22 +31,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": "https://asensio94.github.io/vigia-incendios/fr/",
-   "signals": 1501,
+   "signals": 1558,
    "figures": [
     {
      "country": "ES",
-     "value": 161,
-     "es": "incendios que tocan la Red Natura 2000, de 1.205 con focos desde el 29 de septiembre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 1 205 avec foyers depuis le 29 septembre 2026"
+     "value": 167,
+     "es": "incendios que tocan la Red Natura 2000, de 1.258 con focos desde el 29 de septiembre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 1 258 avec foyers depuis le 29 septembre 2026"
     },
     {
      "country": "FR",
-     "value": 40,
-     "es": "incendios que tocan la Red Natura 2000, de 296 con focos desde el 12 de octubre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 296 avec foyers depuis le 12 octobre 2026"
+     "value": 41,
+     "es": "incendios que tocan la Red Natura 2000, de 300 con focos desde el 12 de octubre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 300 avec foyers depuis le 12 octobre 2026"
     }
    ],
-   "updated": "2026-11-04T09:11:00+00:00",
+   "updated": "2026-11-05T12:20:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -79,7 +79,7 @@
      "fr": "changements confirmés à l'intérieur de sites Natura 2000 des Pyrénées-Atlantiques depuis le 30 septembre 2025"
     }
    ],
-   "updated": "2026-11-04T15:42:00+00:00",
+   "updated": "2026-11-05T15:41:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -99,7 +99,7 @@
    "fr_url": "https://asensio94.github.io/estado-iba/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-11-03T16:16:33+00:00",
+   "updated": "2026-11-04T16:20:55+00:00",
    "updated_from": "repo",
    "countries": [
     "ES",
@@ -146,22 +146,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": null,
-   "signals": 409,
+   "signals": 422,
    "figures": [
     {
      "country": "ES",
-     "value": 202,
+     "value": 208,
      "es": "anuncios del BOE y del Boletín de Cantabria con trámite ambiental desde el 27 de julio de 2026",
      "fr": "avis du Journal officiel espagnol (BOE) et du Bulletin de Cantabrie avec procédure environnementale depuis le 27 juillet 2026"
     },
     {
      "country": "ES",
-     "value": 207,
+     "value": 214,
      "es": "resoluciones finales leídas, con sus condiciones",
      "fr": "décisions finales lues, avec leurs prescriptions"
     }
    ],
-   "updated": "2026-11-04T15:39:00+00:00",
+   "updated": "2026-11-05T15:42:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -177,7 +177,7 @@
    "fr_url": null,
    "signals": null,
    "figures": [],
-   "updated": "2026-11-03T15:27:47+00:00",
+   "updated": "2026-11-05T15:47:23+00:00",
    "updated_from": "repo",
    "countries": [
     "ES"
@@ -199,7 +199,7 @@
      "fr": "zones humides espagnoles sur 6 avec une mesure d'eau récente"
     }
    ],
-   "updated": "2026-11-04T14:42:00+00:00",
+   "updated": "2026-11-05T14:45:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -237,16 +237,16 @@
    "status": "activo",
    "status_note": "",
    "fr_url": "https://asensio94.github.io/acuiferos-francia/fr/",
-   "signals": 721,
+   "signals": 718,
    "figures": [
     {
      "country": "FR",
-     "value": 721,
-     "es": "piezómetros con el nivel bajo o muy bajo en octubre de 2026, frente a los demás octubres; 449 de ellos, muy bajo",
-     "fr": "piézomètres au niveau bas ou très bas en octobre 2026 par rapport aux autres mois de octobre, dont 449 très bas"
+     "value": 718,
+     "es": "piezómetros con el nivel bajo o muy bajo en octubre de 2026, frente a los demás octubres; 444 de ellos, muy bajo",
+     "fr": "piézomètres au niveau bas ou très bas en octobre 2026 par rapport aux autres mois de octobre, dont 444 très bas"
     }
    ],
-   "updated": "2026-11-04T15:07:00+00:00",
+   "updated": "2026-11-05T15:13:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "FR"
