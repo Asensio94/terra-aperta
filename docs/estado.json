@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T17:03Z",
+ "generated": "2026-11-18T16:42Z",
  "projects": [
   {
    "slug": "sub-nocte",
@@ -11,12 +11,12 @@
    "figures": [
     {
      "country": null,
-     "value": 6,
+     "value": 15,
      "es": "de 19 ciudades españolas con previsión de migración alta o muy alta esta noche",
      "fr": "villes espagnoles sur 19 avec une migration forte ou très forte prévue cette nuit"
     }
    ],
-   "updated": "2026-11-17T15:21:00+00:00",
+   "updated": "2026-11-18T14:33:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -31,22 +31,22 @@
    "status": "activo",
    "status_note": "",
    "fr_url": "https://asensio94.github.io/vigia-incendios/fr/",
-   "signals": 1788,
+   "signals": 1793,
    "figures": [
     {
      "country": "ES",
      "value": 188,
-     "es": "incendios que tocan la Red Natura 2000, de 1.455 con focos desde el 29 de septiembre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 1 455 avec foyers depuis le 29 septembre 2026"
+     "es": "incendios que tocan la Red Natura 2000, de 1.459 con focos desde el 29 de septiembre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 1 459 avec foyers depuis le 29 septembre 2026"
     },
     {
      "country": "FR",
      "value": 40,
-     "es": "incendios que tocan la Red Natura 2000, de 333 con focos desde el 12 de octubre de 2026",
-     "fr": "incendies qui touchent Natura 2000, sur 333 avec foyers depuis le 12 octobre 2026"
+     "es": "incendios que tocan la Red Natura 2000, de 334 con focos desde el 12 de octubre de 2026",
+     "fr": "incendies qui touchent Natura 2000, sur 334 avec foyers depuis le 12 octobre 2026"
     }
    ],
-   "updated": "2026-11-17T13:26:00+00:00",
+   "updated": "2026-11-18T13:58:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -79,7 +79,7 @@
      "fr": "changements confirmés à l'intérieur de sites Natura 2000 des Pyrénées-Atlantiques depuis le 30 septembre 2025"
     }
    ],
-   "updated": "2026-11-17T16:59:00+00:00",
+   "updated": "2026-11-18T16:29:00+00:00",
    "updated_from": "signals",
    "countries_v2": [
     "ES",
@@ -99,7 +99,7 @@
    "fr_url": "https://asensio94.github.io/estado-iba/fr/",
    "signals": null,
    "figures": [],
-   "updated": "2026-11-16T18:35:09+00:00",
+   "updated": "2026-11-17T17:38:38+00:00",
    "updated_from": "repo",
    "countries": [
     "ES",
@@ -146,11 +146,11 @@
    "status": "activo",
    "status_note": "",
    "fr_url": null,
-   "signals": 481,
+   "signals": 485,
    "figures": [
     {
      "country": "ES",
-     "value": 248,
+     "value": 252,
      "es": "anuncios del BOE y del Boletín de Cantabria con trámite ambiental desde el 27 de julio de 2026",
      "fr": "avis du Journal officiel espagnol (BOE) et du Bulletin de Cantabrie avec procédure environnementale depuis le 27 juillet 2026"
     },
@@ -161,7 +161,7 @@
      "fr": "décisions finales lues, avec leurs prescriptions"
     }
    ],
-   "updated": "2026-11-17T17:01:00+00:00",
+   "updated": "2026-11-18T16:40:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -199,7 +199,7 @@
      "fr": "zones humides espagnoles sur 6 avec une mesure d'eau récente"
     }
    ],
-   "updated": "2026-11-17T16:11:00+00:00",
+   "updated": "2026-11-18T15:48:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
@@ -218,12 +218,12 @@
    "figures": [
     {
      "country": "ES",
-     "value": 9,
+     "value": 12,
      "es": "puntos de aforo por debajo del mínimo hoy, de 36 que lo estuvieron algún día de los últimos 30 (datos provisionales)",
      "fr": "stations sous le minimum aujourd'hui, sur 36 qui l'ont été un jour des 30 derniers (données provisoires)"
     }
    ],
-   "updated": "2026-11-17T16:59:00+00:00",
+   "updated": "2026-11-18T16:33:00+00:00",
    "updated_from": "signals",
    "countries_v2": [],
    "countries": [
